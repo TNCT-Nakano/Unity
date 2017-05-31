@@ -5,6 +5,7 @@ using UnityEngine;
 public class BehaviourScript : MonoBehaviour {
 
     public float Vy,Vz,speed;
+	public UH unlimitedhand;
 
     private Rigidbody rb;
 
@@ -28,4 +29,8 @@ public class BehaviourScript : MonoBehaviour {
             rb.AddForce(movement * speed);
         }
     }
+
+	void OnCollisionEnter(Collision collision){
+		unlimitedhand.stimulate (2);
+	}
 }

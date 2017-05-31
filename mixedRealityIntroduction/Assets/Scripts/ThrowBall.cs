@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThrowBall : MonoBehaviour
 {
-
+	public UH unlimitedhand;
     public float speed,angle;
 
     private Rigidbody rb;
@@ -33,4 +33,8 @@ public class ThrowBall : MonoBehaviour
             
         }
     }
+
+	void OnCollisionEnter(Collision collision){
+		unlimitedhand.stimulate (4);
+	}
 }
