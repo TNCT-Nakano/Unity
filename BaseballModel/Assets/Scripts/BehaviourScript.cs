@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class BehaviourScript : MonoBehaviour {
+public class BehaviourScript : MonoBehaviour{
 
     public float Vy,Vz,speed;
 
@@ -12,20 +13,32 @@ public class BehaviourScript : MonoBehaviour {
 	void Start () {
         rb = GetComponent<Rigidbody>();
 
-        Vector3 movement = new Vector3(0.0f, Vy, Vz);
-        rb.AddForce(movement * speed);
-
-	}
+        //ThroughMe();
+        Destroy(gameObject, 3.0f);
+    }
 	
 	// Update is called once per frame
 	void Update () {
+        //奈落に落ちた時用
         if (transform.position.z < -5.0f)
         {
-            print("Space key is held down");
             rb.velocity = Vector3.zero;
             transform.position = new Vector3(0f, 0f, 5.0f);
-            Vector3 movement = new Vector3(0.0f, Vy, Vz);
-            rb.AddForce(movement * speed);
+            //ThroughMe();
         }
+    }
+
+    //public void OnSpeechKeywordRecognized(SpeechKeywordRecognizedEventData eventData)
+    //{
+    //   if (eventData.RecognizedText.ToLower() == "come on")
+    //   {
+    //       //めんどくさいのでとりあえず引数ヌル渡して同じ関数呼び出す
+    //       OnInputClicked(null);
+    //    }
+    //}
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        
     }
 }
