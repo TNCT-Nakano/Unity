@@ -138,6 +138,9 @@ namespace HoloToolkit.Unity.InputModule
             gazeAngularOffset = Quaternion.FromToRotation(handDirection, objDirection);
             draggingPosition = gazeHitPosition;
 
+            //SELF ADDITION : stopping object's physical calclation
+            if(gameObject.GetComponent<Rigidbody>()) gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            
             StartedDragging.RaiseEvent();
         }
 
@@ -231,6 +234,8 @@ namespace HoloToolkit.Unity.InputModule
 
             isDragging = false;
             currentInputSource = null;
+            //SELF ADDITION : restarting object's physical calclation
+            if (gameObject.GetComponent<Rigidbody>()) gameObject.GetComponent<Rigidbody>().isKinematic = false;
             StoppedDragging.RaiseEvent();
         }
 

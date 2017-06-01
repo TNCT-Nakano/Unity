@@ -5,9 +5,6 @@ using HoloToolkit.Unity.InputModule;
 using System;
 
 public class ballScript : MonoBehaviour{
-    public bool isHolding;
-    public Vector3 move;
-
     // Use this for initialization
     void Start () {
 
@@ -15,9 +12,6 @@ public class ballScript : MonoBehaviour{
 	
 	// Update is called once per frame
 	void Update () {
-        if (isHolding)
-        {
-            gameObject.GetComponent<Rigidbody>().MovePosition(gameObject.GetComponent<Rigidbody>().position + 0.1f * move);
-        }
+        if (transform.position.y < -10f) Destroy(gameObject);
 	}
 }

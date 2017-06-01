@@ -21,6 +21,8 @@ public class testScript : MonoBehaviour, IInputClickHandler
 
         rb.position = placementPos;
         rb.velocity = velocity * Camera.main.transform.forward;
+        rb.maxAngularVelocity = 30;
+        rb.angularVelocity = new Vector3(-30f,0f,0f);
     }
 
     // Use this for initialization

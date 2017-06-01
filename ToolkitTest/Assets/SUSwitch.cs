@@ -4,31 +4,25 @@ using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 
 public class SUSwitch : MonoBehaviour, IInputClickHandler {
+    HoloToolkit.Unity.SpatialUnderstanding su;
     public void OnInputClicked(InputClickedEventData eventData)
     {
-        HoloToolkit.Unity.SpatialUnderstanding su = GameObject.Find("SpatialUnderstanding").GetComponent<HoloToolkit.Unity.SpatialUnderstanding>();
-        /*
-        switch (su.ScanState)
-        {
-            case HoloToolkit.Unity.SpatialUnderstanding.ScanStates.Scanning:
-                su.RequestFinishScan();
-                break;
-            default:
-                su.RequestBeginScanning();
-                Debug.Log("now SpatialUnderstanding state is " + su.ScanState);
-                break;
-        }
-        */
-        su.RequestFinishScan();
+        //when understanding space, stop it on click
+        if (su.ScanState == HoloToolkit.Unity.SpatialUnderstanding.ScanStates.Scanning)
+            su.RequestFinishScan();
+
+        //when other
+
     }
 
     // Use this for initialization
     void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+		su = GameObject.Find("SpatialUnderstanding").GetComponent<HoloToolkit.Unity.SpatialUnderstanding>();
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+        //transform.rotation.Set(45f,45f,45f,0f);
 	}
 }
