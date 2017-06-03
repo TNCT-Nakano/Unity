@@ -7,6 +7,7 @@ using System;
 public class BehaviourScript : MonoBehaviour, IInputClickHandler, ISpeechHandler {
 
     public float Vy,Vz,speed;
+	public UH unlimitedhand;
 
     private Rigidbody rb;
 
@@ -31,6 +32,7 @@ public class BehaviourScript : MonoBehaviour, IInputClickHandler, ISpeechHandler
         }
     }
 
+<<<<<<< HEAD
     public void OnInputClicked(InputClickedEventData eventData)
     {
         rb.velocity = Vector3.zero;
@@ -47,4 +49,9 @@ public class BehaviourScript : MonoBehaviour, IInputClickHandler, ISpeechHandler
             OnInputClicked(null);
         }
     }
+=======
+	void OnCollisionEnter(Collision collision){
+		unlimitedhand.stimulate (2);
+	}
+>>>>>>> b0661b44b3431ac0a531fc99d5752db8665002f1
 }

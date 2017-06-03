@@ -1,9 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mixedRealityIntroduction", "mixedRealityIntroduction.csproj", "{059792E7-E177-2E20-E091-49698F17FA01}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mixedRealityIntroduction", "Assembly-CSharp.csproj", "{299A9324-B91E-BD83-A8B0-532CD263F17D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mixedRealityIntroduction.Editor", "mixedRealityIntroduction.Editor.csproj", "{D68975F4-65AD-3039-673D-59E58AF73F92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mixedRealityIntroduction", "Assembly-CSharp-Editor.csproj", "{73F1D20C-89F6-13FD-58E7-646B1C64FE21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,16 +11,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{059792E7-E177-2E20-E091-49698F17FA01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{059792E7-E177-2E20-E091-49698F17FA01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{059792E7-E177-2E20-E091-49698F17FA01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{059792E7-E177-2E20-E091-49698F17FA01}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D68975F4-65AD-3039-673D-59E58AF73F92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D68975F4-65AD-3039-673D-59E58AF73F92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D68975F4-65AD-3039-673D-59E58AF73F92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D68975F4-65AD-3039-673D-59E58AF73F92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{299A9324-B91E-BD83-A8B0-532CD263F17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{299A9324-B91E-BD83-A8B0-532CD263F17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{299A9324-B91E-BD83-A8B0-532CD263F17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{299A9324-B91E-BD83-A8B0-532CD263F17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F1D20C-89F6-13FD-58E7-646B1C64FE21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F1D20C-89F6-13FD-58E7-646B1C64FE21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F1D20C-89F6-13FD-58E7-646B1C64FE21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F1D20C-89F6-13FD-58E7-646B1C64FE21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
