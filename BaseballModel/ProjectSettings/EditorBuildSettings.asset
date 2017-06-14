@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: b39ab7aad74bb154c963e268dedbee53
+  - enabled: 1
     path: Assets/Scenes/BaseballModel.unity
     guid: 213c580ec1fbed044a6cbfc222446f03

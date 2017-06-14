@@ -455,6 +455,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
     <Compile Include="Assets\Scripts\BehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\ButtonBehaviourScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit-Examples\Prototyping\Shaders\UnlitTransparentTriplanar.shader" />

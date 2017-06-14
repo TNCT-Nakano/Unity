@@ -28,15 +28,6 @@ public class BehaviourScript : MonoBehaviour{
         }
     }
 
-    //public void OnSpeechKeywordRecognized(SpeechKeywordRecognizedEventData eventData)
-    //{
-    //   if (eventData.RecognizedText.ToLower() == "come on")
-    //   {
-    //       //めんどくさいのでとりあえず引数ヌル渡して同じ関数呼び出す
-    //       OnInputClicked(null);
-    //    }
-    //}
-
     public void OnCollisionEnter(Collision collision)
     {
         
