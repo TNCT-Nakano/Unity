@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+>>>>>>> addingHoloToolkit
 Shader "Spatial Mapping/Spatial Mappping Tap"
 {
 	Properties

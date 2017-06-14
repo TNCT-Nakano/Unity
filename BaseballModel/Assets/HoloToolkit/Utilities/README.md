@@ -14,6 +14,7 @@ A drop in direction indicator that stays in the users view at all times.
 #### HeadsUpDirectionIndicatorPointer.prefab
 A quad based pointer to be used with the HeadsUpDirectionIndicator prefab to create an out of box direction indicator.
 
+<<<<<<< HEAD
 ### [Scenes](Scenes)
 ---
 
@@ -36,6 +37,8 @@ To run the SceneLauncher:
 4) Air tap a scene to load it.
 5) When finished with a scene, say "Scene Launcher" or press the Backspace key to return the the scene list.
 
+=======
+>>>>>>> addingHoloToolkit
 ### [Scripts](Scripts)
 ---
 Utilitiy Scripts.
@@ -45,7 +48,11 @@ Utilitiy Scripts.
 Editor Specific Scripts.
 
 ##### AutoConfigureMenu.cs
+<<<<<<< HEAD
 Configuration options derived from Microsoft Documentation [Configuring a Unity Project for HoloLens](https://developer.microsoft.com/en-us/windows/mixed-reality/unity_development_overview#Configuring_a_Unity_project_for_HoloLens).
+=======
+Configuration options derived from Microsoft Documentation [Configuring a Unity Project for HoloLens](https://developer.microsoft.com/en-us/windows/holographic/unity_development_overview#Configuring_a_Unity_project_for_HoloLens).
+>>>>>>> addingHoloToolkit
 
 ##### AutoConfigureWindow.cs
 Base class for auto configuration build windows.
@@ -164,7 +171,11 @@ A MonoBehaviour that interpolates a transform's position, rotation or scale.
 Math Utilities class.
 
 #### NearPlaneFade.cs
+<<<<<<< HEAD
 Updates the shader parameters for use in near plane fading.
+=======
+Updates the shader parameters for use in near plade fading.
+>>>>>>> addingHoloToolkit
 
 #### PriorityQueue.cs
 Min-heap priority queue. In other words, lower priorities will be removed from the queue first.
@@ -254,7 +265,11 @@ Feature configurable vertex lit transparent shader.  Use when a higher performan
 #### WindowOcclusion.shader
 A simple occlusion shader that can be used to hide other objects. This prevents other objects from being rendered by drawing invisible 'opaque' pixels to the depth buffer. This shader differs from Occlusion.shader in that it doesn't have any depth offset, so it should sort as expected with other objects adjacent to the window.
 
+<<<<<<< HEAD
 ### [Tests](https://github.com/Microsoft/HoloToolkit-Unity/tree/master/Assets/HoloToolkit-Tests/Utilities/Scenes)
+=======
+### [Tests](Tests)
+>>>>>>> addingHoloToolkit
 ---
 Tests related to the utilities features. To use the scene:
 

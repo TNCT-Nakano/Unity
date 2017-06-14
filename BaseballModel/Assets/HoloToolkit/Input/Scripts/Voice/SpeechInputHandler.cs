@@ -10,7 +10,11 @@ namespace HoloToolkit.Unity.InputModule
 {
     public class SpeechInputHandler : MonoBehaviour, ISpeechHandler
     {
+<<<<<<< HEAD
         [Serializable]
+=======
+        [System.Serializable]
+>>>>>>> addingHoloToolkit
         public struct KeywordAndResponse
         {
             [Tooltip("The keyword to handle.")]
@@ -20,21 +24,37 @@ namespace HoloToolkit.Unity.InputModule
         }
 
         [Tooltip("The keywords to be recognized and optional keyboard shortcuts.")]
+<<<<<<< HEAD
         public KeywordAndResponse[] Keywords;
+=======
+        public KeywordAndResponse[] keywords;
+>>>>>>> addingHoloToolkit
 
         [NonSerialized]
         private readonly Dictionary<string, UnityEvent> responses = new Dictionary<string, UnityEvent>();
 
+<<<<<<< HEAD
+=======
+        // Use this for initialization
+>>>>>>> addingHoloToolkit
         protected virtual void Start()
         {
             // Convert the struct array into a dictionary, with the keywords and the methods as the values.
             // This helps easily link the keyword recognized to the UnityEvent to be invoked.
+<<<<<<< HEAD
             int keywordCount = Keywords.Length;
             for (int index = 0; index < keywordCount; index++)
             {
                 KeywordAndResponse keywordAndResponse = Keywords[index];
                 string keyword = keywordAndResponse.Keyword.ToLower();
 
+=======
+            int keywordCount = keywords.Length;
+            for (int index = 0; index < keywordCount; index++)
+            {
+                KeywordAndResponse keywordAndResponse = keywords[index];
+                string keyword = keywordAndResponse.Keyword.ToLower();
+>>>>>>> addingHoloToolkit
                 if (responses.ContainsKey(keyword))
                 {
                     Debug.LogError("Duplicate keyword '" + keyword + "' specified in '" + gameObject.name + "'.");

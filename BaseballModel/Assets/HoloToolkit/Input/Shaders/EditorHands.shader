@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 ﻿Shader "HoloToolkit/EditorHands"
+=======
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "HoloToolkit/EditorHands"
+>>>>>>> addingHoloToolkit
 {
     Properties
     {

@@ -20,7 +20,11 @@ namespace HoloToolkit.Unity.InputModule
     /// </summary>
     public partial class SpeechInputSource : BaseInputSource
     {
+<<<<<<< HEAD
         [Serializable]
+=======
+        [System.Serializable]
+>>>>>>> addingHoloToolkit
         public struct KeywordAndKeyCode
         {
             [Tooltip("The keyword to recognize.")]
@@ -42,21 +46,36 @@ namespace HoloToolkit.Unity.InputModule
 
         private KeywordRecognizer keywordRecognizer;
 
+<<<<<<< HEAD
+=======
+        private SpeechKeywordRecognizedEventData speechKeywordRecognizedEventData;
+>>>>>>> addingHoloToolkit
 
         protected override void Start()
         {
             base.Start();
 
+<<<<<<< HEAD
+=======
+            speechKeywordRecognizedEventData = new SpeechKeywordRecognizedEventData(EventSystem.current);
+
+>>>>>>> addingHoloToolkit
             int keywordCount = Keywords.Length;
             if (keywordCount > 0)
             {
                 string[] keywords = new string[keywordCount];
+<<<<<<< HEAD
 
+=======
+>>>>>>> addingHoloToolkit
                 for (int index = 0; index < keywordCount; index++)
                 {
                     keywords[index] = Keywords[index].Keyword;
                 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> addingHoloToolkit
                 keywordRecognizer = new KeywordRecognizer(keywords);
                 keywordRecognizer.OnPhraseRecognized += KeywordRecognizer_OnPhraseRecognized;
 
@@ -145,9 +164,26 @@ namespace HoloToolkit.Unity.InputModule
             }
         }
 
+<<<<<<< HEAD
         protected void OnPhraseRecognized(ConfidenceLevel confidence, TimeSpan phraseDuration, DateTime phraseStartTime, SemanticMeaning[] semanticMeanings, string text)
         {
             InputManager.Instance.RaiseSpeechKeywordPhraseRecognized(this, 0, confidence, phraseDuration, phraseStartTime, semanticMeanings, text);
+=======
+        private static readonly ExecuteEvents.EventFunction<ISpeechHandler> OnSpeechKeywordRecognizedEventHandler =
+            delegate (ISpeechHandler handler, BaseEventData eventData)
+            {
+                SpeechKeywordRecognizedEventData casted = ExecuteEvents.ValidateEventData<SpeechKeywordRecognizedEventData>(eventData);
+                handler.OnSpeechKeywordRecognized(casted);
+            };
+
+        protected void OnPhraseRecognized(ConfidenceLevel confidence, TimeSpan phraseDuration, DateTime phraseStartTime, SemanticMeaning[] semanticMeanings, string text)
+        {
+            // Create input event
+            speechKeywordRecognizedEventData.Initialize(this, 0, confidence, phraseDuration, phraseStartTime, semanticMeanings, text);
+
+            // Pass handler through HandleEvent to perform modal/fallback logic
+            inputManager.HandleEvent(speechKeywordRecognizedEventData, OnSpeechKeywordRecognizedEventHandler);
+>>>>>>> addingHoloToolkit
         }
 
         public override bool TryGetPosition(uint sourceId, out Vector3 position)

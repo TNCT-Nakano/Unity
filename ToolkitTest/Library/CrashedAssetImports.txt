@@ -1,0 +1,1 @@
+Assets/HoloToolkit/Utilities/Shaders/LambertianConfigurable.shader

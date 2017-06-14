@@ -225,7 +225,11 @@ namespace HoloToolkit.Unity.InputModule
             // Graphics raycast
             raycastResultList.Clear();
             EventSystem.current.RaycastAll(UnityUIPointerEvent, raycastResultList);
+<<<<<<< HEAD
             RaycastResult uiRaycastResult = FindClosestRaycastHitInLayermasks(raycastResultList, RaycastLayerMasks);
+=======
+            RaycastResult uiRaycastResult = FindFirstRaycastInLayermasks(raycastResultList, RaycastLayerMasks);
+>>>>>>> addingHoloToolkit
             UnityUIPointerEvent.pointerCurrentRaycast = uiRaycastResult;
 
             // If we have a raycast result, check if we need to overwrite the 3D raycast info
@@ -287,12 +291,20 @@ namespace HoloToolkit.Unity.InputModule
         #region Helpers
 
         /// <summary>
+<<<<<<< HEAD
         /// Find the closest raycast hit in the list of RaycastResults that is also included in the LayerMask list.  
+=======
+        /// Find the first (closest) raycast in the list of RaycastResults that is also included in the LayerMask list.  
+>>>>>>> addingHoloToolkit
         /// </summary>
         /// <param name="candidates">List of RaycastResults from a Unity UI raycast</param>
         /// <param name="layerMaskList">List of layers to support</param>
         /// <returns>RaycastResult if hit, or an empty RaycastResult if nothing was hit</returns>
+<<<<<<< HEAD
         private RaycastResult FindClosestRaycastHitInLayermasks(List<RaycastResult> candidates, LayerMask[] layerMaskList)
+=======
+        private RaycastResult FindFirstRaycastInLayermasks(List<RaycastResult> candidates, LayerMask[] layerMaskList)
+>>>>>>> addingHoloToolkit
         {
             int combinedLayerMask = 0;
             for (int i = 0; i < layerMaskList.Length; i++)
@@ -300,13 +312,17 @@ namespace HoloToolkit.Unity.InputModule
                 combinedLayerMask = combinedLayerMask | layerMaskList[i].value;
             }
 
+<<<<<<< HEAD
             RaycastResult? minHit = null;
+=======
+>>>>>>> addingHoloToolkit
             for (var i = 0; i < candidates.Count; ++i)
             {
                 if (candidates[i].gameObject == null || !IsLayerInLayerMask(candidates[i].gameObject.layer, combinedLayerMask))
                 {
                     continue;
                 }
+<<<<<<< HEAD
                 if (minHit == null || candidates[i].distance < minHit.Value.distance)
                 {
                     minHit = candidates[i];
@@ -316,6 +332,15 @@ namespace HoloToolkit.Unity.InputModule
              return minHit ?? new RaycastResult();
         }
         
+=======
+
+                return candidates[i];
+            }
+
+            return new RaycastResult();
+        }
+
+>>>>>>> addingHoloToolkit
         /// <summary>
         /// Look through the layerMaskList and find the index in that list for which the supplied layer is part of
         /// </summary>

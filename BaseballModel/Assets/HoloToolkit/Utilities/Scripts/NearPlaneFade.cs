@@ -6,7 +6,11 @@ using UnityEngine;
 namespace HoloToolkit.Unity
 {
     /// <summary>
+<<<<<<< HEAD
     /// Sets global shader variables relating to near plane fade
+=======
+    /// Updates the shader parameters for use in near plade fading.
+>>>>>>> addingHoloToolkit
     /// </summary>
     [ExecuteInEditMode]
     public class NearPlaneFade : MonoBehaviour
@@ -20,7 +24,11 @@ namespace HoloToolkit.Unity
 
         private int fadeDistancePropertyID;
 
+<<<<<<< HEAD
         private void Awake()
+=======
+        private void Start()
+>>>>>>> addingHoloToolkit
         {
             fadeDistancePropertyID = Shader.PropertyToID("_NearPlaneFadeDistance");
             UpdateShaderParams();
@@ -28,11 +36,19 @@ namespace HoloToolkit.Unity
 
         private void OnValidate()
         {
+<<<<<<< HEAD
+=======
+            FadeDistanceStart = Mathf.Max(FadeDistanceStart, 0);
+            FadeDistanceEnd = Mathf.Max(FadeDistanceEnd, 0);
+            FadeDistanceStart = Mathf.Max(FadeDistanceStart, FadeDistanceEnd);
+
+>>>>>>> addingHoloToolkit
             UpdateShaderParams();
         }
 
         private void UpdateShaderParams()
         {
+<<<<<<< HEAD
             FadeDistanceStart = Mathf.Max(FadeDistanceStart, 0);
             FadeDistanceEnd = Mathf.Max(FadeDistanceEnd, 0);
             FadeDistanceStart = Mathf.Max(FadeDistanceStart, FadeDistanceEnd);
@@ -43,6 +59,12 @@ namespace HoloToolkit.Unity
                 var fadeDist = new Vector4(-FadeDistanceEnd * rangeInverse, rangeInverse, 0, 0);
                 Shader.SetGlobalVector(fadeDistancePropertyID, fadeDist);
             }
+=======
+            float rangeInverse = 1.0f / (FadeDistanceStart - FadeDistanceEnd);
+            var fadeDist = new Vector4(-FadeDistanceEnd * rangeInverse, rangeInverse, 0, 0);
+
+            Shader.SetGlobalVector(fadeDistancePropertyID, fadeDist);
+>>>>>>> addingHoloToolkit
 
             if (NearPlaneFadeOn)
             {
@@ -54,4 +76,8 @@ namespace HoloToolkit.Unity
             }
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> addingHoloToolkit
