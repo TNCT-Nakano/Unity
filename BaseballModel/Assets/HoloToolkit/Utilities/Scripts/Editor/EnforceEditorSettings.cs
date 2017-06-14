@@ -1,15 +1,8 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License. See LICENSE in the project root for license information.
-<<<<<<< HEAD
 using UnityEditor;
 
 namespace HoloToolkit.Unity
-=======
-
-using UnityEditor;
-
-namespace HoloToolKit.Unity
->>>>>>> addingHoloToolkit
 {
     /// <summary>
     /// Sets Force Text Serialization and visible meta files in all projects that use the HoloToolkit.
@@ -17,16 +10,12 @@ namespace HoloToolKit.Unity
     [InitializeOnLoad]
     public class EnforceEditorSettings
     {
-<<<<<<< HEAD
         private const string _assemblyReloadTimestampKey = "HoloToolkit_Editor_LastAssemblyReload";
 
-=======
->>>>>>> addingHoloToolkit
         static EnforceEditorSettings()
         {
             #region Editor Settings
 
-<<<<<<< HEAD
             if (!IsNewEditorSession())
             {
                 return;
@@ -43,17 +32,10 @@ namespace HoloToolKit.Unity
                     EditorSettings.serializationMode = SerializationMode.ForceText;
                     UnityEngine.Debug.Log("Setting Force Text Serialization");
                 }
-=======
-            if (EditorSettings.serializationMode != SerializationMode.ForceText)
-            {
-                EditorSettings.serializationMode = SerializationMode.ForceText;
-                UnityEngine.Debug.Log("Setting Force Text Serialization");
->>>>>>> addingHoloToolkit
             }
 
             if (!EditorSettings.externalVersionControl.Equals("Visible Meta Files"))
             {
-<<<<<<< HEAD
                 if (EditorUtility.DisplayDialog( 
                     "Make Meta Files Visible?", 
                     "HoloToolkit would like to make meta files visible so they can be more easily handled with common version control systems. Would you like to make this change?", 
@@ -95,13 +77,6 @@ namespace HoloToolKit.Unity
             // If the current session was launched later than the last known session start date, then this must be 
             // a new session, and we can display the first-time prompt.
             return (thisLaunchDate - lastLaunchDate).Seconds > 0;
-=======
-                EditorSettings.externalVersionControl = "Visible Meta Files";
-                UnityEngine.Debug.Log("Updated external version control mode: " + EditorSettings.externalVersionControl);
-            }
-
-            #endregion
->>>>>>> addingHoloToolkit
         }
     }
 }

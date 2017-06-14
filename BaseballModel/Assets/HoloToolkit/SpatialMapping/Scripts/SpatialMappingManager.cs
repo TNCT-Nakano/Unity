@@ -48,14 +48,11 @@ namespace HoloToolkit.Unity.SpatialMapping
         public float StartTime { get; private set; }
 
         /// <summary>
-<<<<<<< HEAD
         /// SurfaceMappingObserver GET
         /// </summary>
         public SpatialMappingObserver SurfaceObserver { get { return surfaceObserver; } }
 
         /// <summary>
-=======
->>>>>>> addingHoloToolkit
         /// The current source of spatial mapping data.
         /// </summary>
         public SpatialMappingSource Source

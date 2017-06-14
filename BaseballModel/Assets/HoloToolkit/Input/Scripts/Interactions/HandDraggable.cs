@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 // Copyright (c) Microsoft Corporation. All rights reserved.
-=======
-﻿// Copyright (c) Microsoft Corporation. All rights reserved.
->>>>>>> addingHoloToolkit
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
@@ -35,7 +31,6 @@ namespace HoloToolkit.Unity.InputModule
 
         [Tooltip("Scale by which hand movement in z is multipled to move the dragged object.")]
         public float DistanceScale = 2f;
-<<<<<<< HEAD
         
         public enum RotationModeEnum
         {
@@ -54,14 +49,6 @@ namespace HoloToolkit.Unity.InputModule
         [Tooltip("Controls the speed at which the object will interpolate toward the desired rotation")]
         [Range(0.01f, 1.0f)]
         public float RotationLerpSpeed = 0.2f;
-=======
-
-        [Tooltip("Should the object be kept upright as it is being dragged?")]
-        public bool IsKeepUpright = false;
-
-        [Tooltip("Should the object be oriented towards the user as it is being dragged?")]
-        public bool IsOrientTowardsUser = true;
->>>>>>> addingHoloToolkit
 
         public bool IsDraggingEnabled = true;
 
@@ -219,7 +206,6 @@ namespace HoloToolkit.Unity.InputModule
 
             draggingPosition = pivotPosition + (targetDirection * targetDistance);
 
-<<<<<<< HEAD
             if (RotationMode == RotationModeEnum.OrientTowardUser || RotationMode == RotationModeEnum.OrientTowardUserAndKeepUpright) 
             {
                 draggingRotation = Quaternion.LookRotation(HostTransform.position - pivotPosition);
@@ -229,13 +215,6 @@ namespace HoloToolkit.Unity.InputModule
                 draggingRotation = HostTransform.rotation;
             }
             else // RotationModeEnum.Default
-=======
-            if (IsOrientTowardsUser)
-            {
-                draggingRotation = Quaternion.LookRotation(HostTransform.position - pivotPosition);
-            }
-            else
->>>>>>> addingHoloToolkit
             {
                 Vector3 objForward = mainCamera.transform.TransformDirection(objRefForward); // in world space
                 Vector3 objUp = mainCamera.transform.TransformDirection(objRefUp);   // in world space
@@ -243,7 +222,6 @@ namespace HoloToolkit.Unity.InputModule
             }
 
             // Apply Final Position
-<<<<<<< HEAD
             HostTransform.position = Vector3.Lerp(HostTransform.position, draggingPosition + mainCamera.transform.TransformDirection(objRefGrabPoint), PositionLerpSpeed);
             // Apply Final Rotation
             HostTransform.rotation = Quaternion.Lerp(HostTransform.rotation, draggingRotation, RotationLerpSpeed);
@@ -252,15 +230,6 @@ namespace HoloToolkit.Unity.InputModule
             {		
                 Quaternion upRotation = Quaternion.FromToRotation(HostTransform.up, Vector3.up);		
                 HostTransform.rotation = upRotation * HostTransform.rotation;		
-=======
-            HostTransform.position = draggingPosition + mainCamera.transform.TransformDirection(objRefGrabPoint);
-            HostTransform.rotation = draggingRotation;
-
-            if (IsKeepUpright)
-            {
-                Quaternion upRotation = Quaternion.FromToRotation(HostTransform.up, Vector3.up);
-                HostTransform.rotation = upRotation * HostTransform.rotation;
->>>>>>> addingHoloToolkit
             }
         }
 

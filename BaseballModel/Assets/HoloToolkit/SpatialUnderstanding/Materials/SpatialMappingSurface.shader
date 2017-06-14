@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
->>>>>>> addingHoloToolkit
 ///
 /// Basic wireframe shader that can be used for rendering spatial mapping meshes.
 ///

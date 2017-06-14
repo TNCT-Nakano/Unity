@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
->>>>>>> addingHoloToolkit
 ///
 /// Basic occlusion shader that can be used with spatial mapping meshes.
 /// No pixels will be rendered at the object's location.

@@ -5,10 +5,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-<<<<<<< HEAD
 using UnityEngine.Windows.Speech;
-=======
->>>>>>> addingHoloToolkit
 
 namespace HoloToolkit.Unity.InputModule
 {
@@ -45,11 +42,8 @@ namespace HoloToolkit.Unity.InputModule
         private ManipulationEventData manipulationEventData;
         private HoldEventData holdEventData;
         private NavigationEventData navigationEventData;
-<<<<<<< HEAD
         private SpeechKeywordRecognizedEventData speechKeywordRecognizedEventData;
         private DictationEventData dictationEventData;
-=======
->>>>>>> addingHoloToolkit
 
         /// <summary>
         /// Indicates if input is currently enabled or not.
@@ -179,7 +173,6 @@ namespace HoloToolkit.Unity.InputModule
             }
         }
 
-<<<<<<< HEAD
         private void InitializeEventDatas()
         {
             inputEventData = new InputEventData(EventSystem.current);
@@ -194,8 +187,6 @@ namespace HoloToolkit.Unity.InputModule
 
         #region Unity Methods
 
-=======
->>>>>>> addingHoloToolkit
         private void Start()
         {
             InitializeEventDatas();
@@ -208,57 +199,27 @@ namespace HoloToolkit.Unity.InputModule
             RegisterGazeManager();
         }
 
-<<<<<<< HEAD
         private void OnEnable()
         {
             RegisterGazeManager();
         }
 
         private void OnDisable()
-=======
-        private void InitializeEventDatas()
-        {
-            inputEventData = new InputEventData(EventSystem.current);
-            sourceClickedEventData = new InputClickedEventData(EventSystem.current);
-            sourceStateEventData = new SourceStateEventData(EventSystem.current);
-            manipulationEventData = new ManipulationEventData(EventSystem.current);
-            navigationEventData = new NavigationEventData(EventSystem.current);
-            holdEventData = new HoldEventData(EventSystem.current);
-        }
-
-        protected override void OnDestroy()
->>>>>>> addingHoloToolkit
         {
             UnregisterGazeManager();
         }
 
-<<<<<<< HEAD
         protected override void OnDestroy()
         {
             UnregisterGazeManager();
         }
 
         #endregion // Unity Methods
-=======
-        private void OnEnable()
-        {
-            RegisterGazeManager();
-        }
-
-        private void OnDisable()
-        {
-            UnregisterGazeManager();
-        }
->>>>>>> addingHoloToolkit
 
         public void HandleEvent<T>(BaseEventData eventData, ExecuteEvents.EventFunction<T> eventHandler)
             where T : IEventSystemHandler
         {
-<<<<<<< HEAD
             if (!Instance.enabled || disabledRefCount > 0)
-=======
-            if (!enabled || disabledRefCount > 0)
->>>>>>> addingHoloToolkit
             {
                 return;
             }
@@ -487,11 +448,8 @@ namespace HoloToolkit.Unity.InputModule
             HandleEvent(sourceStateEventData, OnSourceLostEventHandler);
         }
 
-<<<<<<< HEAD
         #region Manipulation Events
 
-=======
->>>>>>> addingHoloToolkit
         private static readonly ExecuteEvents.EventFunction<IManipulationHandler> OnManipulationStartedEventHandler =
             delegate (IManipulationHandler handler, BaseEventData eventData)
             {
@@ -556,13 +514,10 @@ namespace HoloToolkit.Unity.InputModule
             HandleEvent(manipulationEventData, OnManipulationCanceledEventHandler);
         }
 
-<<<<<<< HEAD
         #endregion // Manipulation Events
 
         #region Hold Events
 
-=======
->>>>>>> addingHoloToolkit
         private static readonly ExecuteEvents.EventFunction<IHoldHandler> OnHoldStartedEventHandler =
             delegate (IHoldHandler handler, BaseEventData eventData)
             {
@@ -611,13 +566,10 @@ namespace HoloToolkit.Unity.InputModule
             HandleEvent(holdEventData, OnHoldCanceledEventHandler);
         }
 
-<<<<<<< HEAD
         #endregion // Hold Events
 
         #region Navigation Events
 
-=======
->>>>>>> addingHoloToolkit
         private static readonly ExecuteEvents.EventFunction<INavigationHandler> OnNavigationStartedEventHandler =
             delegate (INavigationHandler handler, BaseEventData eventData)
             {
@@ -682,7 +634,6 @@ namespace HoloToolkit.Unity.InputModule
             HandleEvent(navigationEventData, OnNavigationCanceledEventHandler);
         }
 
-<<<<<<< HEAD
         #endregion // Navigation Events
 
         #region Speech Events
@@ -775,7 +726,3 @@ namespace HoloToolkit.Unity.InputModule
 
     }
 }
-=======
-    }
-}
->>>>>>> addingHoloToolkit

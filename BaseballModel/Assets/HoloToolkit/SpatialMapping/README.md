@@ -142,13 +142,9 @@ Generates planes and classifies them by type (wall, ceiling, floor, table, unkno
 
 **WallMaterial** Material to use when rendering wall plane types.
 
-<<<<<<< HEAD
 **FloorMaterial** Material to use when rendering floor plane types.
 
 **CeilingMaterial** Material to use when rendering ceiling plane types.
-=======
-**FloorMaterial** Material to use when rendering ceiling plane types.
->>>>>>> addingHoloToolkit
 
 **TableMaterial** Material to use when rendering table plane types.
 
@@ -165,11 +161,7 @@ A basic wire frame shader that can be used for rendering spatial mapping meshes.
 #### SpatialMappingTap.shader
 Draws a ring originating from a location in space. Useful for showing where a user tapped. Requires a component to drive it's radius and set the tap location in world space.
 
-<<<<<<< HEAD
 ### [Tests Scenes](https://github.com/Microsoft/HoloToolkit-Unity/tree/master/Assets/HoloToolkit-Tests/SpatialMapping/Scenes)
-=======
-### [Tests Scenes](Tests/Scenes)
->>>>>>> addingHoloToolkit
 
 #### PlaneFinding.unity
 To use this sample code, load the PlaneFinding scene and hit Play. The PlaneFinding algorithm will run in a loop. Switch to the scene view to see a visualization of the planes found.

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
->>>>>>> addingHoloToolkit
 #include "HLSLSupport.cginc"
 #include "UnityCG.cginc"
 #include "Lighting.cginc"

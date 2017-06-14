@@ -2,10 +2,7 @@
 // Licensed under the MIT License. See LICENSE in the project root for license information.
 
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UI;
-=======
->>>>>>> addingHoloToolkit
 
 namespace HoloToolkit.Unity
 {
@@ -15,7 +12,6 @@ namespace HoloToolkit.Unity
     [RequireComponent(typeof(TextMesh))]
     public class FpsDisplay : MonoBehaviour
     {
-<<<<<<< HEAD
         [Tooltip("Reference to TextMesh component where the FPS should be displayed.")]
         [SerializeField]
         private TextMesh textMesh;
@@ -24,12 +20,6 @@ namespace HoloToolkit.Unity
         [SerializeField]
         private Text uGUIText;
 
-=======
-        [Tooltip("Reference to Text UI control where the FPS should be displayed.")]
-        [SerializeField]
-        private TextMesh textMesh;
-
->>>>>>> addingHoloToolkit
         [Tooltip("How many frames should we consider into our average calculation?")]
         [SerializeField]
         private int frameRange = 60;
@@ -68,7 +58,6 @@ namespace HoloToolkit.Unity
 
         private void InitBuffer()
         {
-<<<<<<< HEAD
             if (textMesh == null)
             {
                 textMesh = GetComponent<TextMesh>();
@@ -78,9 +67,6 @@ namespace HoloToolkit.Unity
             {
                 uGUIText = GetComponent<Text>();
             }
-=======
-            textMesh = GetComponent<TextMesh>();
->>>>>>> addingHoloToolkit
 
             if (frameRange <= 0)
             {
@@ -99,14 +85,11 @@ namespace HoloToolkit.Unity
             {
                 textMesh.text = displayString;
             }
-<<<<<<< HEAD
 
             if (uGUIText != null)
             {
                 uGUIText.text = displayString;
             }
-=======
->>>>>>> addingHoloToolkit
         }
 
         private void UpdateFrameBuffer()

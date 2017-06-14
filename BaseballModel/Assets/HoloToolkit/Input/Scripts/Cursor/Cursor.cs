@@ -180,7 +180,6 @@ namespace HoloToolkit.Unity.InputModule
         /// <summary>
         /// Override for enable functions
         /// </summary>
-<<<<<<< HEAD
         protected virtual void OnEnable()
         {
             if (gazeManager)
@@ -189,9 +188,6 @@ namespace HoloToolkit.Unity.InputModule
             }
             OnCursorStateChange(CursorStateEnum.None);
         }
-=======
-        protected virtual void OnEnable() { }
->>>>>>> addingHoloToolkit
 
         /// <summary>
         /// Override for disable functions
@@ -201,11 +197,8 @@ namespace HoloToolkit.Unity.InputModule
             TargetedObject = null;
             TargetedCursorModifier = null;
             visibleHandsCount = 0;
-<<<<<<< HEAD
             IsHandVisible = false;
             OnCursorStateChange(CursorStateEnum.Contextual);
-=======
->>>>>>> addingHoloToolkit
         }
 
         private void OnDestroy()
@@ -298,16 +291,10 @@ namespace HoloToolkit.Unity.InputModule
             targetScale = Vector3.one;
 
             // If no game object is hit, put the cursor at the default distance
-<<<<<<< HEAD
             if (newTargetedObject == null)
             {
                 this.TargetedObject = null;
                 this.TargetedCursorModifier = null;
-=======
-            if (TargetedObject == null)
-            {
-                this.TargetedObject = null;
->>>>>>> addingHoloToolkit
                 targetPosition = gazeManager.GazeOrigin + gazeManager.GazeNormal * DefaultCursorDistance;
                 targetRotation = lookForward.magnitude > 0 ? Quaternion.LookRotation(lookForward, Vector3.up) : transform.rotation;
             }
@@ -341,11 +328,7 @@ namespace HoloToolkit.Unity.InputModule
         /// <summary>
         /// Updates the visual representation of the cursor.
         /// </summary>
-<<<<<<< HEAD
         public virtual void SetVisiblity(bool visible)
-=======
-        public void SetVisiblity(bool visible)
->>>>>>> addingHoloToolkit
         {
             if (PrimaryCursorVisual != null)
             {

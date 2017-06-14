@@ -1,10 +1,4 @@
-<<<<<<< HEAD
 ﻿//
-=======
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-//
->>>>>>> addingHoloToolkit
 // Copyright (C) Microsoft. All rights reserved. 
 //
 

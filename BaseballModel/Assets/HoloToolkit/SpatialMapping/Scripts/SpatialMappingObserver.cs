@@ -25,7 +25,6 @@ namespace HoloToolkit.Unity.SpatialMapping
     }
 
     /// <summary>
-<<<<<<< HEAD
     /// Spatial Mapping Volume Type
     /// </summary>
     public enum ObserverVolumeTypes
@@ -47,8 +46,6 @@ namespace HoloToolkit.Unity.SpatialMapping
     }
 
     /// <summary>
-=======
->>>>>>> addingHoloToolkit
     /// The SpatialMappingObserver class encapsulates the SurfaceObserver into an easy to use
     /// object that handles managing the observed surfaces and the rendering of surface geometry.
     /// </summary>
@@ -57,12 +54,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         [Tooltip("The number of triangles to calculate per cubic meter.")]
         public float TrianglesPerCubicMeter = 500f;
 
-<<<<<<< HEAD
-=======
-        [Tooltip("The extents of the observation volume.")]
-        public Vector3 Extents = Vector3.one * 10.0f;
-
->>>>>>> addingHoloToolkit
         [Tooltip("How long to wait (in sec) between Spatial Mapping updates.")]
         public float TimeBetweenUpdates = 3.5f;
 
@@ -72,7 +63,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         public ObserverStates ObserverState { get; private set; }
 
         /// <summary>
-<<<<<<< HEAD
         /// Indicates the current type of the observed volume
         /// </summary>
         [SerializeField][Tooltip("The shape of the observation volume.")]
@@ -94,8 +84,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         }
 
         /// <summary>
-=======
->>>>>>> addingHoloToolkit
         /// Our Surface Observer object for generating/updating Spatial Mapping data.
         /// </summary>
         private SurfaceObserver observer;
@@ -124,7 +112,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         /// </summary>
         private float updateTime;
 
-<<<<<<< HEAD
         [SerializeField][Tooltip("The extents of the observation volume.")]
         private Vector3 extents = Vector3.one * 10.0f;
         public Vector3 Extents
@@ -189,8 +176,6 @@ namespace HoloToolkit.Unity.SpatialMapping
             }
         }
 
-=======
->>>>>>> addingHoloToolkit
         protected override void Awake()
         {
             base.Awake();
@@ -215,11 +200,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
                     SurfaceObject newSurface;
                     WorldAnchor worldAnchor;
-<<<<<<< HEAD
 
-=======
-                    
->>>>>>> addingHoloToolkit
                     if (spareSurfaceObject == null)
                     {
                         newSurface = CreateSurfaceObject(
@@ -288,11 +269,7 @@ namespace HoloToolkit.Unity.SpatialMapping
             if (observer == null)
             {
                 observer = new SurfaceObserver();
-<<<<<<< HEAD
                 SwitchObservedVolume();
-=======
-                observer.SetVolumeAsAxisAlignedBox(Vector3.zero, Extents);
->>>>>>> addingHoloToolkit
             }
 
             if (ObserverState != ObserverStates.Running)
@@ -351,10 +328,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
         /// <summary>
         /// Can be called to override the default origin for the observed volume.  Can only be called while observer has been started.
-<<<<<<< HEAD
         /// Kept for compatibility with Examples/SpatialUnderstanding
-=======
->>>>>>> addingHoloToolkit
         /// </summary>
         public bool SetObserverOrigin(Vector3 origin)
         {
@@ -362,11 +336,7 @@ namespace HoloToolkit.Unity.SpatialMapping
 
             if (observer != null)
             {
-<<<<<<< HEAD
                 Origin = origin;
-=======
-                observer.SetVolumeAsAxisAlignedBox(origin, Extents);
->>>>>>> addingHoloToolkit
                 originUpdated = true;
             }
 
@@ -374,7 +344,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         }
 
         /// <summary>
-<<<<<<< HEAD
         /// Change the observed volume according to ObserverVolumeType.
         /// </summary>
         private void SwitchObservedVolume()
@@ -403,8 +372,6 @@ namespace HoloToolkit.Unity.SpatialMapping
         }
 
         /// <summary>
-=======
->>>>>>> addingHoloToolkit
         /// Handles the SurfaceObserver's OnDataReady event.
         /// </summary>
         /// <param name="cookedData">Struct containing output data.</param>

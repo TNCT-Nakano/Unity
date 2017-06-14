@@ -352,9 +352,9 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\PlaneTargetGroupPicker.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\TextToSpeechManagerTest.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Tests\Scripts\TextToSpeechOnTap.cs" />
-    <Compile Include="Assets\SUSwitch.cs" />
-    <Compile Include="Assets\ballScript.cs" />
-    <Compile Include="Assets\testScript.cs" />
+    <Compile Include="Assets\Scripts\SUSwitch.cs" />
+    <Compile Include="Assets\Scripts\ballScript.cs" />
+    <Compile Include="Assets\Scripts\testScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />

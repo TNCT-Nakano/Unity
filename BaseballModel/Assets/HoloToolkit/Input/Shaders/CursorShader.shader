@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
->>>>>>> addingHoloToolkit
 Shader "HoloToolkit/Cursor"
 {
 	Properties
