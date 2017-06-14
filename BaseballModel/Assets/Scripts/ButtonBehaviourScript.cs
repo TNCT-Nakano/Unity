@@ -14,4 +14,13 @@ public class ButtonBehaviourScript : MonoBehaviour {
     {
         //SceneManager.LoadScene("Setting");
     }
+
+    public void endGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
 }
