@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 31e399c438c9b704e8b8a9f29fedba93
+timeCreated: 1498005206
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - baseball: {fileID: 4674113147326506, guid: d04e95d6585ff1e4ca013478b5781da5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
