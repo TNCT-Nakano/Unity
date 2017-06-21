@@ -324,6 +324,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
+    <Compile Include="Assets\Scripts\BatBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\BehaviourScript.cs" />
     <Compile Include="Assets\Scripts\ButtonBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PitchingMachine.cs" />

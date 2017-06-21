@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HoloToolkit.Unity.InputModule;
 
-public class PitchingMachine : MonoBehaviour {
-
+public class PitchingMachine : MonoBehaviour, IInputClickHandler {
+    
     public GameObject baseball;
     public Transform target;
     public float Vy, Vz, speed;
@@ -19,18 +20,12 @@ public class PitchingMachine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space)){
-            ThroughBall();
-        }
-        else
-        {
-            if (active) {
-                timeleft -= Time.deltaTime;
-                if (timeleft <= 0.0f)
-                {
-                    timeleft = interval;
-                    ThroughBall();
-                }
+        if (active) {
+            timeleft -= Time.deltaTime;
+            if (timeleft <= 0.0f)
+            {
+                timeleft = interval;
+                ThroughBall();
             }
         }
 	}
@@ -40,5 +35,10 @@ public class PitchingMachine : MonoBehaviour {
         GameObject ballInstance = Instantiate(baseball, transform.position, transform.rotation);
         Vector3 movement = new Vector3(0.0f, Vy, Vz);
         ballInstance.GetComponent<Rigidbody>().AddForce(movement * speed);
+    }
+
+    public void OnInputClicked(InputClickedEventData eventData)
+    {
+        ThroughBall();
     }
 }
