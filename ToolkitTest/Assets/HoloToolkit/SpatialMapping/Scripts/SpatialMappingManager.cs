@@ -323,5 +323,10 @@ namespace HoloToolkit.Unity.SpatialMapping
                 }
             }
         }
+
+        public void ToggleDrawVisualMehses()
+        {
+            DrawVisualMeshes = !DrawVisualMeshes;
+        }
     }
 }

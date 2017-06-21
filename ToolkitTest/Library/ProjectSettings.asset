@@ -513,10 +513,12 @@ PlayerSettings:
     7: VUFORIA_ANDROID_SETTINGS
     14: VUFORIA_WSA_SETTINGS
   platformArchitecture: {}
-  scriptingBackend: {}
+  scriptingBackend:
+    Metro: 2
   incrementalIl2cppBuild: {}
   additionalIl2CppArgs: 
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Metro: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: ToolkitTest
@@ -525,10 +527,10 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 00dbea461af4d301
+  metroCertificateNotAfter: 0048c9b373fbd301
   metroApplicationDescription: ToolkitTest
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: ToolkitTest
   metroCommandLineArgsFile: 
   metroTileShowName: 0
   metroMediumTileShowName: 0
@@ -544,7 +546,7 @@ PlayerSettings:
     WindowsStoreApps:
       AllJoyn: False
       BlockedChatMessages: False
-      Bluetooth: False
+      Bluetooth: True
       Chat: False
       CodeGeneration: False
       EnterpriseAuthentication: False
