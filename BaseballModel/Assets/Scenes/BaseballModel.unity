@@ -365,6 +365,8 @@ MonoBehaviour:
   Vy: 3
   Vz: -10
   speed: 17000
+  active: 1
+  interval: 3
 --- !u!4 &384117020
 Transform:
   m_ObjectHideFlags: 0
