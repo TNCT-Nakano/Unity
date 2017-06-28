@@ -16,6 +16,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
 {
 
     private string _message = null;
+    /// <summary>
+    /// 通信関係のメソッドを実行中に発生した事象に関する最新のメッセージを示します。
+    /// </summary>
     public string message
     {
         get
@@ -33,6 +36,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
         }
     }
     private bool _isOpen = false;
+    /// <summary>
+    /// 現在Bluetoohデバイスとの接続が確立されているかを示します。
+    /// </summary>
     public bool isOpen
     {
         get
@@ -173,6 +179,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
     }
 #endif
 
+    /// <summary>
+    /// 引数に設定した名称のデバイスとのSPP接続を確立します。このメソッドは非同期タスクを生成します。
+    /// </summary>
     private void Open(string deviceName)
     {
 #if NETFX_CORE
@@ -185,6 +194,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// 接続中のデバイスとのリンクを閉じます。このメソッドは非同期タスクを生成します。
+    /// </summary>
     private void Close()
     {
 #if NETFX_CORE
@@ -198,6 +210,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// 接続中のデバイスにメッセージを送信します。このメソッドは非同期タスクを生成します。
+    /// </summary>
     private void WriteLine(string data)
     {
 #if NETFX_CORE
@@ -211,6 +226,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// 接続中のデバイスからのメッセージを取得します。このメソッドは非同期タスクを生成します。
+    /// </summary>
     private string ReadLine()
     {
 #if NETFX_CORE
@@ -222,6 +240,9 @@ public class UnlimitedHandBehaviour : MonoBehaviour
 #endif
     }
 
+    /// <summary>
+    /// 接続可能なデバイスの一覧を返します。このメソッドは非同期タスクを生成します。
+    /// </summary>
     private List<string> GuessDeviceNames()
     {
 #if NETFX_CORE
