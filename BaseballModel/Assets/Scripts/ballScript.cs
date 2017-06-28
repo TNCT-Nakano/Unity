@@ -14,4 +14,10 @@ public class ballScript : MonoBehaviour{
 	void Update () {
         if (transform.position.y < -10f) Destroy(gameObject);
 	}
+
+    //衝突時の処理
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
 }

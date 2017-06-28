@@ -8,7 +8,8 @@ using UnityEngine;
  * 補足　現段階において動作を確認するためのスタブである。
  */
 
-public class BlueComm /*: MonoBehaviour*/ {
+public class BlueComm : MonoBehaviour
+{
     //フィールド宣言
     private Vector3 acc, gyro, geo;//加速度[m/s2]、角速度[rad/s2]、地磁気
     private float batt;//バッテリー電圧[0~1]
@@ -39,9 +40,9 @@ public class BlueComm /*: MonoBehaviour*/ {
     //プロパティ宣言
     public Vector3 Acceleration { get { return acc; } }
     public Vector3 Gyro { get { return gyro; } }
-    public Vector3 Geomagnetism{ get { return geo; } }
+    public Vector3 Geomagnetism { get { return geo; } }
     public float Battery { get { return batt; } }
     public float Period { get { return period; } }
-   
+
 
 }
