@@ -11,12 +11,24 @@ public class BatBehaviourScript : MonoBehaviour, INavigationHandler {
 	// Use this for initialization
 	void Start () {
         rigidbody.centerOfMass = new Vector3(0, 0, 1);
+
+        //位置初期化
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Vector3 pos = Input.mousePosition;
         transform.rotation = Quaternion.Euler(pos.x , 0, 0);
+
+        //加速度による移動
+        /*var dir = Vector3.zero;
+        dir = Input.acceleration;
+        if(dir != null)
+            transform.Translate(dir);
+
+        //ジャイロによる回転
+        Quaternion gyro = Input.gyro.attitude;
+        */
     }
 
     public void OnNavigationStarted(NavigationEventData eventData)
