@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolkitTest", "ToolkitTest.csproj", "{2F0C8EFC-346C-E1D7-FC57-2DA5B905CCEC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolkitTest.Editor", "ToolkitTest.Editor.csproj", "{78F9D69A-DDD9-FBE4-FF70-736C5E72F42C}"
