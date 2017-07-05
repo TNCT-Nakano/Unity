@@ -19,14 +19,15 @@ public class BatBehaviourScript : MonoBehaviour, INavigationHandler {
 	
 	// Update is called once per frame
 	void Update () {
+        //マウスの位置によって回転させる
         Vector3 pos = Input.mousePosition;
-        //transform.rotation = Quaternion.Euler(pos.x , 0, 0);
+        transform.rotation = Quaternion.Euler(pos.x/2 , 0, 0);
 
         //BlueNinjaからデータ取得
         BlueComm bc = GetComponent<BlueComm>();
 
         //加速度による移動
-        var dir = Vector3.zero;
+        /*var dir = Vector3.zero;
         dir = bc.Acceleration;
         if(dir != null)
         {
@@ -37,7 +38,7 @@ public class BatBehaviourScript : MonoBehaviour, INavigationHandler {
         //ジャイロによる回転
         Quaternion gyro = Quaternion.Euler(bc.Gyro);
         if(gyro != null)
-            transform.rotation = gyro;
+            transform.rotation = gyro;*/
         
     }
 

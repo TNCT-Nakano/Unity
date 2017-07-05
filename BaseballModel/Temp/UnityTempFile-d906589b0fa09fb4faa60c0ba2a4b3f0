@@ -333,6 +333,7 @@ Assets/Scripts/BehaviourScript.cs
 Assets/Scripts/ButtonBehaviourScript.cs
 Assets/Scripts/PitchingMachine.cs
 Assets/Scripts/SUSwitch.cs
+Assets/Scripts/StrikeZoneBehaviourScript.cs
 Assets/Scripts/ballScript.cs
 Assets/Scripts/device/BlueComm.cs
 Assets/Scripts/testScript.cs

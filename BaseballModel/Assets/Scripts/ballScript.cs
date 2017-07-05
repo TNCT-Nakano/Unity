@@ -13,6 +13,7 @@ public class ballScript : MonoBehaviour{
 	// Update is called once per frame
 	void Update () {
         if (transform.position.y < -10f) Destroy(gameObject);
+        
 	}
 
     //衝突時の処理

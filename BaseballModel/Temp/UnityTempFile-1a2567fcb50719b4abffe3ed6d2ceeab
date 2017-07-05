@@ -333,8 +333,9 @@ Assets/Scripts/BehaviourScript.cs
 Assets/Scripts/ButtonBehaviourScript.cs
 Assets/Scripts/PitchingMachine.cs
 Assets/Scripts/SUSwitch.cs
+Assets/Scripts/StrikeZoneBehaviourScript.cs
 Assets/Scripts/ballScript.cs
-Assets/Scripts/device/BlueCommBehaviourscript.cs
+Assets/Scripts/device/BlueComm.cs
 Assets/Scripts/testScript.cs
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\Mono\lib\mono\unity\System.Xml.Linq.dll"
