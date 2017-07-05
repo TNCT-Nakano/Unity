@@ -329,7 +329,9 @@
     <Compile Include="Assets\Scripts\ButtonBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PitchingMachine.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
+    <Compile Include="Assets\Scripts\StrikeZoneBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\ballScript.cs" />
+    <Compile Include="Assets\Scripts\device\BlueComm.cs" />
     <Compile Include="Assets\Scripts\testScript.cs" />
   </ItemGroup>
   <ItemGroup>
