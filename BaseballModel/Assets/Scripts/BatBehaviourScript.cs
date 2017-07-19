@@ -10,11 +10,19 @@ public class BatBehaviourScript : MonoBehaviour, INavigationHandler {
 
     // Use this for initialization
     void Start () {
-        rigidbody.centerOfMass = new Vector3(0, 0, 1);
+        //rigidbody.centerOfMass = new Vector3(0, 0, 1);
 
         BlueComm bc = GetComponent<BlueComm>();
 
         //位置初期化
+        //BatInit();
+    }
+
+    //バットの位置初期化
+    void BatInit()
+    {
+        transform.position = new Vector3(0, 0, transform.localScale.y);
+        transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 	
 	// Update is called once per frame
@@ -26,8 +34,8 @@ public class BatBehaviourScript : MonoBehaviour, INavigationHandler {
         //BlueNinjaからデータ取得
         BlueComm bc = GetComponent<BlueComm>();
 
-        //加速度による移動
-        /*var dir = Vector3.zero;
+        /*/加速度による移動
+        var dir = Vector3.zero;
         dir = bc.Acceleration;
         if(dir != null)
         {
