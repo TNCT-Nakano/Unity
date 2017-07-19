@@ -326,9 +326,9 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
     <Compile Include="Assets\Scripts\BatBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\BehaviourScript.cs" />
-    <Compile Include="Assets\Scripts\ButtonBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\PitchingMachine.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
+    <Compile Include="Assets\Scripts\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\StrikeZoneBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\ballScript.cs" />
     <Compile Include="Assets\Scripts\device\BlueComm.cs" />
