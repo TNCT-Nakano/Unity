@@ -355,6 +355,8 @@
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
     <Compile Include="Assets\Scripts\ballScript.cs" />
     <Compile Include="Assets\Scripts\testScript.cs" />
+    <Compile Include="Assets\infoBehaviour.cs" />
+    <Compile Include="Assets\initializing.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />
