@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d83ab91c60484e241b88be6112348baf
+timeCreated: 1501044608
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - mahoujin: {fileID: 1812194792219140, guid: a789a5a30ea97d242a74998c94e954fd, type: 2}
+  - buster: {fileID: 1919842099107256, guid: 0e815a92b695d294194cf1a714143270, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
