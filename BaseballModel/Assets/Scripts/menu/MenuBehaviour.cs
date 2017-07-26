@@ -39,6 +39,11 @@ public class MenuBehaviour : MonoBehaviour {
         msgbox.transform.Find("Panel").Find("Message").gameObject.GetComponent<Text>().text = "toggle into "+ GameObject.Find("SpatialMapping").GetComponent<HoloToolkit.Unity.SpatialMapping.SpatialMappingManager>().DrawVisualMeshes.ToString();
     }
 
+    public void MakePlanes()
+    {
+        SurfaceMeshesToPlanes.Instance.MakePlanes();
+    }
+
     public void BackToTitle()
     {
         SceneManager.LoadSceneAsync("StartScene");
