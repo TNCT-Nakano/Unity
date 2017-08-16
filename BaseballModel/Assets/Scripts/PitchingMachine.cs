@@ -33,12 +33,13 @@ public class PitchingMachine : MonoBehaviour, IInputClickHandler {
 
     void ThroughBall()
     {
-        double theta = Math.Asin (18.5 * 9.81 / ( speed * speed) ) / 2;
+        double theta = Math.Atan(-0.5 / 18 - 0.5 * -9.81 * 18 / (speed * 1000 / 3600));//前提として、y=1.5から投げるとしてるよ
+        Debug.Log(theta);
         Vy = (float)Math.Sin(theta);
         Vz = -(float)Math.Cos(theta);
         GameObject ballInstance = Instantiate(baseball, transform.position, transform.rotation);
         Vector3 movement = new Vector3(0.0f, Vy, Vz);
-        ballInstance.GetComponent<Rigidbody>().AddForce(movement * speed * 2);
+        ballInstance.GetComponent<Rigidbody>().AddForce(movement * (speed * 1000 / 3600) / (float)Math.Cos(theta), ForceMode.VelocityChange);
     }
 
     public void OnInputClicked(InputClickedEventData eventData)
