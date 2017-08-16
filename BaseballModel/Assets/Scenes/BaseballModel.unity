@@ -363,9 +363,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseball: {fileID: 1203174428002264, guid: d04e95d6585ff1e4ca013478b5781da5, type: 2}
   target: {fileID: 805948998}
-  Vy: 0
-  Vz: 0
-  speed: 14
+  Vy: 3
+  Vz: -10
+  speed: 17
   active: 1
   interval: 3
 --- !u!4 &384117020
