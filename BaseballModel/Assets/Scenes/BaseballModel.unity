@@ -365,7 +365,7 @@ MonoBehaviour:
   target: {fileID: 805948998}
   Vy: 3
   Vz: -10
-  speed: 17
+  speed: 170
   active: 1
   interval: 3
 --- !u!4 &384117020
