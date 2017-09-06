@@ -76,11 +76,8 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Library\UnityAssemblies\Mono.Cecil.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +322,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
+    <Compile Include="Assets\Scripts\UnlimitedHandBehaviour.cs" />
     <Compile Include="Assets\Scripts\baseball\BatBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\BehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\PitchingMachine.cs" />
