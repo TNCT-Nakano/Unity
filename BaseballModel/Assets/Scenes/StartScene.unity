@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44924027, g: 0.49931353, b: 0.5757119, a: 1}
+  m_IndirectSpecularColor: {r: 0.44924003, g: 0.4993134, b: 0.5757118, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1016237893}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f998269cac258946a254fefb1aa16ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f69268d817ca9c468f6cf3879739cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: test
@@ -634,7 +634,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1475982513}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f998269cac258946a254fefb1aa16ec, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f69268d817ca9c468f6cf3879739cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: BaseballModel
