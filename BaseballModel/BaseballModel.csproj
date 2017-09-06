@@ -326,6 +326,7 @@
     <Compile Include="Assets\Scripts\HandObserver.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
     <Compile Include="Assets\Scripts\SUTagViewer.cs" />
+    <Compile Include="Assets\Scripts\UnlimitedHandBehaviour.cs" />
     <Compile Include="Assets\Scripts\baseball\AutoDestroyMaterials.cs" />
     <Compile Include="Assets\Scripts\baseball\BatBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\BatInitBehaviour.cs" />
