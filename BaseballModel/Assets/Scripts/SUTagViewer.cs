@@ -28,7 +28,7 @@ public class SUTagViewer : MonoBehaviour {
             rayVec.y,
             rayVec.z,
             raycastResultPtr);
-        
+
         SpatialUnderstandingDll.Imports.RaycastResult rayCastResult = SpatialUnderstanding.Instance.UnderstandingDLL.GetStaticRaycastResult();
         textMesh.text = rayCastResult.SurfaceType.ToString();
     }
