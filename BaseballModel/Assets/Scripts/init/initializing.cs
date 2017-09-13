@@ -26,7 +26,7 @@ public class initializing : MonoBehaviour {
 #if TEST
     IEnumerator isOpenSTUB()    //テスト用、起動から3秒後にisOpenをtrueにします（Bluetooth通信確立を想定）
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         isOpen = true;
     }
 #endif
