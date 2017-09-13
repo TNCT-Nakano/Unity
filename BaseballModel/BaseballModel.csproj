@@ -256,6 +256,8 @@
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\RemoveSurfaceVertices.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfaceMeshesToPlanes.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialMapping\Scripts\SpatialProcessing\SurfacePlane.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialMapping\Tests\Scripts\PlaneFindingTest.cs" />
+    <Compile Include="Assets\HoloToolkit\SpatialMapping\Tests\Scripts\SpatialProcessingTest.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\AudioEmitter.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\AudioOccluder.cs" />
     <Compile Include="Assets\HoloToolkit\SpatialSound\Scripts\IAudioInfluencer.cs" />
@@ -321,20 +323,25 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
+    <Compile Include="Assets\Scripts\HandObserver.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
+    <Compile Include="Assets\Scripts\SUTagViewer.cs" />
     <Compile Include="Assets\Scripts\UnlimitedHandBehaviour.cs" />
+    <Compile Include="Assets\Scripts\baseball\AutoDestroyMaterials.cs" />
     <Compile Include="Assets\Scripts\baseball\BatBehaviourScript.cs" />
+    <Compile Include="Assets\Scripts\baseball\BatInitBehaviour.cs" />
     <Compile Include="Assets\Scripts\baseball\BehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\PitchingMachine.cs" />
     <Compile Include="Assets\Scripts\baseball\StrikeZoneBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\ballScript.cs" />
+    <Compile Include="Assets\Scripts\baseball\init.cs" />
+    <Compile Include="Assets\Scripts\baseball\testScript.cs" />
     <Compile Include="Assets\Scripts\device\BlueComm.cs" />
-    <Compile Include="Assets\Scripts\menu\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Scripts\init\DontDestroyOnLoad.cs" />
+    <Compile Include="Assets\Scripts\init\SceneChanger.cs" />
+    <Compile Include="Assets\Scripts\init\initializing.cs" />
     <Compile Include="Assets\Scripts\menu\MenuBehaviour.cs" />
-    <Compile Include="Assets\Scripts\menu\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\menu\infoBehaviour.cs" />
-    <Compile Include="Assets\Scripts\menu\initializing.cs" />
-    <Compile Include="Assets\Scripts\testScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\HoloToolkit\Input\Shaders\Cursor.shader" />

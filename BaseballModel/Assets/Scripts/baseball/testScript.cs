@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using HoloToolkit.Unity.InputModule;
 using System;
+using HoloToolkit.Unity.SpatialMapping;
 
 public class testScript : MonoBehaviour, IInputClickHandler
 {
@@ -29,6 +30,15 @@ public class testScript : MonoBehaviour, IInputClickHandler
     void Start()
     {
         InputManager.Instance.AddGlobalListener(gameObject);
+        SurfaceMeshesToPlanes.Instance.MakePlanes();
+        SurfaceMeshesToPlanes.Instance.MakePlanesComplete += DeleteMeshes;
+    }
+
+    void DeleteMeshes(object s, EventArgs e)
+    {
+        SpatialMappingManager.Instance.StopObserver();
+        foreach (Transform t in SpatialMappingManager.Instance.gameObject.transform)
+            Destroy(t.gameObject);
     }
 
     // Update is called once per frame
