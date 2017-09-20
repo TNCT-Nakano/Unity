@@ -13,7 +13,6 @@ public class initializing : MonoBehaviour {
 #endif
 	// Use this for initialization
 	void Start () {
-        Debug.Log("[Starting] GuessDeviceNames:" + uh.GuessDeviceNames());
         var waitingWindow = Instantiate(infoPanel);
         waitingWindow.transform.Find("Panel").Find("Message").gameObject.GetComponent<Text>().text = "Now starting.\nPlease wait for Bluetooth connection.";
         StartCoroutine(waitConnection(waitingWindow));
