@@ -12,7 +12,7 @@ using Windows.Networking.Sockets;
 using Windows.Storage.Streams;
 #endif
 
-public class UnlimitedHandBehaviour : MonoBehaviour
+public class UnlimitedHandBehaviour : BluetoothDevice
 {
     //UH instance
     //private static UH instance = null;
@@ -45,275 +45,18 @@ public class UnlimitedHandBehaviour : MonoBehaviour
     public int EMS_voltageLevel;    //the voltage level(Stimulation Level) of EMS
     public int EMS_sharpnessLevel;  // the sharpness level of EMS
 
-    private string _message = null;
-    public string message
+    public override void rcvCallback(string value)
     {
-        get
+        Debug.Log("received value = " + value);
+        if (value[0] != '!')
         {
-            return _message;
-        }
-        set
-        {
-            if (_message != value)
+            Debug.Log("not debug value");
+            for (int i = 0; i < 3; i++)
             {
-
-                _message = value;
-                Debug.Log("message changed:" + value);
+                Gyro[i] = (Convert.ToInt32(value.Substring(i * 5, 4), 16));
+                Accel[i] = (Convert.ToInt32(value.Substring((i + 3) * 5, 4), 16));
             }
         }
-    }
-    private bool _isOpen = false;
-    public bool isOpen
-    {
-        get
-        {
-            return _isOpen;
-        }
-        set
-        {
-            if (_isOpen != value)
-            {
-                _isOpen = value;
-                Debug.Log("isOpen changed:" + value);
-            }
-        }
-    }
-    private string _rcv = "";
-    public string rcv
-    {
-        get
-        {
-            return _rcv;
-        }
-        set
-        {
-            if (_rcv != value)
-            {
-                _rcv = value;
-                //ここでイベント起こすこともできるよ
-                Debug.Log("received value = "+value);
-                if (value[0] != '!')
-                {
-                    Debug.Log("not debug value");
-                    for (int i = 0; i < 3; i++)
-                    {
-                        Gyro[i] = (Convert.ToInt32(value.Substring(i * 5, 4), 16));
-                        Accel[i] = (Convert.ToInt32(value.Substring((i + 3) * 5, 4), 16));
-                    }
-                }
-            }
-        }
-    }
-#if NETFX_CORE
-    private RfcommDeviceService DeviceService;
-    private StreamSocket BtSocket;
-    private DataWriter Writer;
-    private DataReader Reader;
-
-    private async Task _Open(string deviceName)
-    {
-        if (isOpen)
-        {
-            message = "Already port opened.";
-            return;
-        }
-        if (deviceName != null)
-        {
-            //Bluetoothデバイス名と一致するデバイス情報を取得し接続する 
-            var forwards = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
-            foreach (var forward in forwards)
-            {
-                if (forward.Name == deviceName)
-                {
-                    await _Open(forward);
-                    break;
-                }
-            }
-        }
-    }
-    private async Task _Open(DeviceInformation serviceInfo)
-    {
-        try
-        {
-            //指定されたデバイス情報で接続を行う 
-            if (DeviceService == null)
-            {
-                DeviceService = await RfcommDeviceService.FromIdAsync(serviceInfo.Id);
-                BtSocket = new StreamSocket();
-                await BtSocket.ConnectAsync(
-                    this.DeviceService.ConnectionHostName,
-                    this.DeviceService.ConnectionServiceName,
-                    SocketProtectionLevel.BluetoothEncryptionAllowNullAuthentication);
-                Writer = new DataWriter(BtSocket.OutputStream);
-                Reader = new DataReader(BtSocket.InputStream);
-                this.message = "Connected " + DeviceService.ConnectionHostName.DisplayName;
-                isOpen = true;
-            }
-        }
-        catch (Exception ex)
-        {
-            this.message = ex.Message;
-            DeviceService = null;
-            isOpen = false;
-        }
-    }
-
-
-    private async Task _Close()
-    {
-        try
-        {
-            DeviceService = null;
-            await BtSocket.CancelIOAsync();
-            Writer = null;
-            Reader = null;
-            message = "Closed";
-            isOpen = false;                
-        }
-        catch(Exception ex)
-        {
-            this.message = ex.Message;
-            DeviceService = null;
-            isOpen = false;
-        }
-    }
-
-    private async Task _WriteLine(string data)
-    {
-        try
-        {
-            if (DeviceService != null)
-            {
-                Writer.WriteString(data);
-                var sendResult = await Writer.StoreAsync();
-            }
-        }
-        catch (Exception ex)
-        {
-            this.message = ex.Message;
-            DeviceService = null;
-            isOpen = false;
-        }
-    }
-
-    private async Task<string> _ReadLine()
-    {
-        try
-        {
-            if (DeviceService != null)
-            {
-                uint count = await Reader.LoadAsync(sizeof(char)*30);
-                return Reader.ReadString(count);
-            }
-            return "";
-        }
-        catch(Exception ex)
-        {
-            this.message = ex.Message;
-            DeviceService = null;
-            isOpen = false;
-            return "";
-        }
-    }
-
-    private async Task<List<string>> _GuessDeviceNames()
-    {
-        List<string> deviceNames = new List<string>();
-        var serviceInfos = await DeviceInformation.FindAllAsync(RfcommDeviceService.GetDeviceSelector(RfcommServiceId.SerialPort));
-        foreach (var serviceInfo in serviceInfos)
-        {
-            deviceNames.Add(serviceInfo.Name);
-        }
-        return deviceNames;
-    }
-#endif
-
-    public void Open(string deviceName)
-    {
-#if NETFX_CORE
-        Task.Run(async () =>
-            {
-                await _Open(deviceName);
-            });
-#else
-        Debug.Log("This function is only supported on HoloLens.");
-#endif
-    }
-
-    public void Close()
-    {
-#if NETFX_CORE
-        if(!isOpen)return;
-        Task.Run(async () =>
-            {
-                await _Close();
-            });
-#else
-        Debug.Log("This function is only supported on HoloLens.");
-#endif
-    }
-
-    public void WriteLine(string data)
-    {
-#if NETFX_CORE
-        if(!isOpen)return;
-        Task.Run(async () =>
-            {
-                await _WriteLine(data);
-            });
-#else
-        Debug.Log("This function is only supported on HoloLens.");
-#endif
-    }
-
-    public string ReadLine()
-    {
-#if NETFX_CORE
-        if(!isOpen)return "";
-        return Task.Run<string>(async () => {return await _ReadLine();}).Result;
-#else
-        Debug.Log("This function is only supported on HoloLens.");
-        return "";
-#endif
-    }
-
-    public void _StartWaiter()
-    {
-#if NETFX_CORE
-        if(!isOpen){
-            message = "port closed. starting waiter is cancelled";
-        }
-        Task.Run(async () =>{
-            message = "waiter is started.";
-            while(isOpen)
-                rcv=await _ReadLine();
-            message = "waiter is stopped.";
-        });
-#endif
-    }
-
-    public List<string> GuessDeviceNames()
-    {
-#if NETFX_CORE
-        return Task<List<string>>.Run(async () => {return await _GuessDeviceNames();}).Result;
-#else
-        Debug.Log("This function is only supported on HoloLens.");
-        return null;
-#endif
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        Debug.Log("Devices:" + string.Join(",", GuessDeviceNames().ToArray()));
-        Open("RNI-SPP");
-        StartCoroutine(StartWaiter());
-    }
-
-    IEnumerator StartWaiter()
-    {
-        yield return new WaitUntil(()=> { return isOpen; });
-        _StartWaiter();
     }
 
     public void stimulate(int channel, int time, int volt, int sharpness)
@@ -348,6 +91,14 @@ public class UnlimitedHandBehaviour : MonoBehaviour
     public void vibrationTime(int time)
     {
         WriteLine("vbr " + time.ToString() + "\n");
+    }
+
+    void Start()
+    {
+        dataSize = 30;
+        Debug.Log("Devices:" + string.Join(",", GuessDeviceNames().ToArray()));
+        Open("RNI-SPP");
+        StartCoroutine(StartWaiter());
     }
 
     /*
