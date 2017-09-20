@@ -21,7 +21,7 @@ public class SensorBehaviour : BluetoothDevice {
     // Use this for initialization
     void Start()
     {
-        dataSize = 54;
+        dataSize = 27;
         Open("BTHello");
         StartCoroutine(StartWaiter());
     }

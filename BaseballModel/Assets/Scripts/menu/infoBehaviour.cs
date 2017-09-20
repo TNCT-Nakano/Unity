@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class infoBehaviour : MonoBehaviour {
-
+    public bool autoDestroing=true;
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(autoDestroy());
+        if(autoDestroing)
+            StartCoroutine(autoDestroy());
 	}
 	
 	// Update is called once per frame

@@ -336,6 +336,8 @@
     <Compile Include="Assets\Scripts\baseball\init.cs" />
     <Compile Include="Assets\Scripts\baseball\testScript.cs" />
     <Compile Include="Assets\Scripts\device\BlueComm.cs" />
+    <Compile Include="Assets\Scripts\device\BluetoothDevice.cs" />
+    <Compile Include="Assets\Scripts\device\SensorBehaviour.cs" />
     <Compile Include="Assets\Scripts\device\UnlimitedHandBehaviour.cs" />
     <Compile Include="Assets\Scripts\init\DontDestroyOnLoad.cs" />
     <Compile Include="Assets\Scripts\init\SceneChanger.cs" />
