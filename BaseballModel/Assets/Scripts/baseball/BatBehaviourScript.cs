@@ -6,16 +6,19 @@ public class BatBehaviourScript : MonoBehaviour{
 
     private float x, y, z;
     private UnlimitedHandBehaviour UHBehav;
+    private SensorBehaviour SBehav;
 
     // Use this for initialization
     void Start () {
         //rigidbody.centerOfMass = new Vector3(0, 0, 1);
 
         UHBehav = GetComponent<UnlimitedHandBehaviour>();
+        SBehav = GetComponent<SensorBehaviour>();
     }
 
 	
 	// Update is called once per frame
+    //60fps
 	void Update () {
         /*
         //マウスの位置によって回転させる
@@ -24,12 +27,10 @@ public class BatBehaviourScript : MonoBehaviour{
         */
 
         //加速度による移動
-        /*
-        var dir = UHBehav.Accel;
-        if(dir != null)
+        var acc = SBehav.Accel;
+        if(acc != null)
         {
-            dir.Normalize();
-            transform.Translate(dir);
+            
         }
         
 
@@ -37,7 +38,13 @@ public class BatBehaviourScript : MonoBehaviour{
         Quaternion gyro = Quaternion.Euler(UHBehav.Gyro); //Gyroはz,x,yの順
         if(gyro != null)
             transform.rotation *= gyro; //gyroの値分回転させる
-        */
+        
+    }
+
+    //50fps
+    private void FixedUpdate()
+    {
+        
     }
 
     //衝突時
