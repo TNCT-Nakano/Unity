@@ -23,7 +23,6 @@ public class StrikeZoneBehaviourScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        
-        Debug.Log("Hit Strike Zone" );
+        Debug.Log("Hit Strike Zone");
     }
 }
