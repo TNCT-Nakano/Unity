@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class initializing : MonoBehaviour {
     public GameObject infoPanel;
     public UnlimitedHandBehaviour uh;
+    public SensorBehaviour sensor;
 #if TEST
     private bool isOpen=false;
     private int counter;
@@ -14,7 +15,7 @@ public class initializing : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         var waitingWindow = Instantiate(infoPanel);
-        waitingWindow.transform.Find("Panel").Find("Message").gameObject.GetComponent<Text>().text = "Now starting.\nPlease wait for Bluetooth connection.";
+        waitingWindow.GetComponent<infoBehaviour>().autoDestroing = false;
         StartCoroutine(waitConnection(waitingWindow));
 #if TEST
         StartCoroutine(isOpenSTUB());
@@ -34,7 +35,11 @@ public class initializing : MonoBehaviour {
 #if TEST
         yield return new WaitUntil(()=> { return isOpen; });
 #else
-        yield return new WaitUntil(()=> { return uh.isOpen; });
+        yield return new WaitUntil(()=> {
+            dialog.transform.Find("Panel").Find("Message").gameObject.GetComponent<Text>().text = 
+                    "Now starting.\nPlease wait for Bluetooth connection.\n\n  UH="+uh.isOpen.ToString()+"\n  Sensor="+sensor.isOpen.ToString();
+            return uh.isOpen && sensor.isOpen;
+        });
 #endif
 
         SceneManager.LoadSceneAsync("StartScene");
