@@ -137,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 1606824314005908, guid: 29355bd80e5e26d408acfa3beb8b9806, type: 2}
   uh: {fileID: 1283636601}
+  sensor: {fileID: 1283636602}
 --- !u!4 &538201087
 Transform:
   m_ObjectHideFlags: 0
@@ -376,6 +377,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3a5c9137b62e4479a60133e25bcb8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Gyro: {x: 0, y: 0, z: 0}
+  Accel: {x: 0, y: 0, z: 0}
 --- !u!1001 &1466606658
 Prefab:
   m_ObjectHideFlags: 0
