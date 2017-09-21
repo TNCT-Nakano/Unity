@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 23472501873790076}
   - component: {fileID: 114495145448647990}
   - component: {fileID: 54485669721047484}
-  - component: {fileID: 114400197405692512}
   - component: {fileID: 114059811292153528}
   m_Layer: 0
   m_Name: Bat
@@ -109,17 +108,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a54bcd102ad08a042987e1efd1f12e5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114400197405692512
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1370063300506976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4655c8cf203f1a14aa9dbd7386fb44dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114495145448647990

@@ -7,10 +7,10 @@ using System;
 public class ballScript : MonoBehaviour{
     // Use this for initialization
 
-    private Rigidbody rb;
+    //private Rigidbody rb;
 
     void Start () {
-        rb = this.GetComponent<Rigidbody>();
+        //rb = this.GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
