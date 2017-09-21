@@ -18,8 +18,6 @@ public class SensorBehaviour : BluetoothDevice {
 
     public override void rcvCallback(string value)
     {
-        message = value;
-        Debug.Log("received value = " + value);
         if (value[0] != '!')
         {
             for (int i = 0; i < 3; i++)
@@ -28,6 +26,8 @@ public class SensorBehaviour : BluetoothDevice {
                 Accel[i] = (float)(Convert.ToInt32(value.Substring((i + 3) * 9, 8), 16)) / (1 << 16);
             }
         }
+        //‚±‚ê‚ª‚ß‚¿‚á‚­‚¿‚ád‚¢
+        //Debug.Log("[Srcv]G:" + Gyro.ToString() +",A:"+Accel.ToString()+",Time(ms):"+DateTime.Now.Hour * 60 * 60 * 1000 + DateTime.Now.Minute * 60 * 1000 + DateTime.Now.Second * 1000 + DateTime.Now.Millisecond);
     }
 
     // Use this for initialization

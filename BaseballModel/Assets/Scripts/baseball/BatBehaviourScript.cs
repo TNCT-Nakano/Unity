@@ -29,6 +29,12 @@ public class BatBehaviourScript : MonoBehaviour{
 	// Update is called once per frame
     //60fps
 	void Update () {
+        /*********
+         * げっぱ※
+         * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
+         * Timeクラスにdeltatimeパラメータがあり、前のフレームからの経過時間が取得できるためこちらを用いるとよい
+         * /
+
         /*
         //マウスの位置によって回転させる
         Vector3 pos = Input.mousePosition;
@@ -47,6 +53,11 @@ public class BatBehaviourScript : MonoBehaviour{
         //スレッショルド補正するつもり
 
         //gyroの値分回転させる
+        /*********
+         * げっぱ※
+         * rigidbodyのオブジェクトにはtransformの操作が利きません
+         * rigidbodyのプロパティに回転をかけるか、AddRelativeTorqueの利用を検討してください
+         */
         transform.rotation *= gyro;
         
     }
@@ -66,6 +77,7 @@ public class BatBehaviourScript : MonoBehaviour{
         if (collision.gameObject.CompareTag("Ball"))
         {
             //チャンネル部位、時間sec max200、電圧max12、鋭さmax20
+            Debug.Log("Hit!!!");
             UHBehav.stimulate(0, 1, 12, 20);
         }
 
