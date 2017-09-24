@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class init : MonoBehaviour {
 
+	public GameObject bases;
+
 	// Use this for initialization
 	void Start () {
         //下向きにrayを打つ
@@ -20,7 +22,7 @@ public class init : MonoBehaviour {
             */
 
 			/* o地点から下に向けて当たった座標にプレハブ配置　*/
-			Instantiate (bases, hit.point, Quaternion.identitys);
+			Instantiate (bases, hit.point, Quaternion.identity);
         }
 	}
 	

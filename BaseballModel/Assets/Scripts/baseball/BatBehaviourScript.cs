@@ -13,6 +13,7 @@ public class BatBehaviourScript : MonoBehaviour{
     private Vector3 gyroThres = new Vector3(1, 1, 1);
 
     private Rigidbody rb;
+	private float frame;
 
     // Use this for initialization
     void Start () {
@@ -32,8 +33,7 @@ public class BatBehaviourScript : MonoBehaviour{
          * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
          * Timeクラスにdeltatimeパラメータがあり、前のフレームからの経過時間が取得できるためこちらを用いるとよい
          */
-		Float frame = Time.deltatime;
-
+		frame = Time.deltaTime;
         /*
         //マウスの位置によって回転させる
         Vector3 pos = Input.mousePosition;
@@ -49,7 +49,7 @@ public class BatBehaviourScript : MonoBehaviour{
 
         //ジャイロによる回転
 //        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
-		Vector3 gyro = SBehav.Gyro
+		Vector3 gyro = SBehav.Gyro;
         //スレッショルド補正するつもり
 
         //gyroの値分回転させる
@@ -59,6 +59,7 @@ public class BatBehaviourScript : MonoBehaviour{
          * rigidbodyのプロパティに回転をかけるか、AddRelativeTorqueの利用を検討してください
          */
 		/* スナダ rigidbodyにインスタント速度変化を追加 */
+
 		rb.AddRelativeTorque (gyro, ForceMode.VelocityChange);
         
     }
