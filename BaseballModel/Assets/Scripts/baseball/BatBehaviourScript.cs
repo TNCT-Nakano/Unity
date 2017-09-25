@@ -31,43 +31,12 @@ public class BatBehaviourScript : MonoBehaviour{
 	// Update is called once per frame
     //60fps
 	void Update () {
-        /*********
-         * げっぱ※
-         * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
-         * Timeクラスにdeltatimeパラメータがあり、前のフレームからの経過時間が取得できるためこちらを用いるとよい
-         */
-
-        //だいたい0.2(1/60)が出る
 		frame = Time.deltaTime;
 
-        //加速度による移動
         acc = SBehav.Accel;
-
-        //スレッショルド補正するつもり
-
-        //ローカルに力を加える
-        //rb.AddRelativeForce(acc, ForceMode.Acceleration);
-
         transform.Translate(acc * frame * frame, Space.Self);
 
-        //ジャイロによる回転
-        //        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
         gyro = SBehav.Gyro;
-        //スレッショルド補正するつもり
-
-        //gyroの値分回転させる
-        /*********
-         * げっぱ※
-         * rigidbodyのオブジェクトにはtransformの操作が利きません
-         * rigidbodyのプロパティに回転をかけるか、AddRelativeTorqueの利用を検討してください
-         */
-
-        //スレッショルド補正するつもり
-
-        //gyroの値分回転させる
-        // rigidbodyにインスタント速度変化を追加
-        //rb.AddRelativeTorque (gyro, ForceMode.VelocityChange);
-
         transform.Rotate(gyro * frame, Space.Self);
 
         Debug.Log(acc.ToString() + "," + gyro.ToString());
