@@ -8,6 +8,7 @@ public class init : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        Debug.Log("Bases init");
         //下向きにrayを打つ
         RaycastHit hit;
         //(0,0,0)周辺から打つと正しい値が出ない
@@ -23,6 +24,8 @@ public class init : MonoBehaviour {
 
 			/* o地点から下に向けて当たった座標にプレハブ配置　*/
 			Instantiate (bases, hit.point, Quaternion.identity);
+
+            Debug.Log("Bases set");
         }
 	}
 	
