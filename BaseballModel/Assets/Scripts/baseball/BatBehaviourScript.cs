@@ -12,7 +12,13 @@ public class BatBehaviourScript : MonoBehaviour{
     private Vector3 accThres = new Vector3(1,1,1);
     private Vector3 gyroThres = new Vector3(1, 1, 1);
 
+    private Vector3 acc;
+    private Vector3 gyro;
+
     private Rigidbody rb;
+	private float frame;
+
+    int tmp = 0;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +33,7 @@ public class BatBehaviourScript : MonoBehaviour{
 	// Update is called once per frame
     //60fps
 	void Update () {
+<<<<<<< HEAD
         /*********
          * げっぱ※
          * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
@@ -34,17 +41,25 @@ public class BatBehaviourScript : MonoBehaviour{
          */
 		float frame = Time.deltaTime;
 
+=======
+        //だいたい0.2(1/60)が出る
+		frame = Time.deltaTime;
+>>>>>>> 1fb94979eda0240c11bc1f4182df8e59b286becd
         /*
         //マウスの位置によって回転させる
         Vector3 pos = Input.mousePosition;
         transform.rotation = Quaternion.Euler(pos.x/2 , 0, 0);
         */
-
+        /*
+         * バットのIsKinematicをオフにしました。
+         */
         //加速度による移動
-        var acc = SBehav.Accel;
+        acc = SBehav.Accel;
+
         //スレッショルド補正するつもり
-        
+
         //ローカルに力を加える
+<<<<<<< HEAD
         rb.AddRelativeForce(acc, ForceMode.Acceleration);
 
         //ジャイロによる回転
@@ -62,6 +77,20 @@ public class BatBehaviourScript : MonoBehaviour{
         rb.AddRelativeTorque(gyro, ForceMode.VelocityChange);
 
         Debug.Log(acc.ToString() + "," + gyro.ToString());
+=======
+        rb.AddRelativeForce(acc*frame*frame, ForceMode.Acceleration);
+
+        //ジャイロによる回転
+        //        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
+        gyro = SBehav.Gyro;
+        
+        //スレッショルド補正するつもり
+
+        //gyroの値分回転させる
+        // rigidbodyにインスタント速度変化を追加
+        rb.AddRelativeTorque (gyro, ForceMode.VelocityChange);
+        
+>>>>>>> 1fb94979eda0240c11bc1f4182df8e59b286becd
     }
 
 

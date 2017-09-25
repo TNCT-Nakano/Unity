@@ -502,3 +502,6 @@ BaseballModel/Temp/UnityLockfile
 /*.userprefs
 /*.pidb
 /*.booproj
+BaseballModel/BaseballModel.csproj.orig
+BaseballModel/BaseballModel.Editor.csproj.orig
+BaseballModel/BaseballModel.sln.orig

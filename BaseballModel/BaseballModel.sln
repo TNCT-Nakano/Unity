@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseballModel", "BaseballModel.csproj", "{99C6F42A-93A6-112C-7BC3-FB0C71B2688B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseballModel.Editor", "BaseballModel.Editor.csproj", "{39755F8F-177C-C170-241B-906ADCF09474}"
