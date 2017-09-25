@@ -17,9 +17,9 @@ public class BatBehaviourScript : MonoBehaviour{
     // Use this for initialization
     void Start () {
         //rigidbody.centerOfMass = new Vector3(0, 0, 1);
-
-        UHBehav = GetComponent<UnlimitedHandBehaviour>();
-        SBehav = GetComponent<SensorBehaviour>();
+        GameObject bt = GameObject.Find("BluetoothDevices");
+        UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
+        SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -32,7 +32,7 @@ public class BatBehaviourScript : MonoBehaviour{
          * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
          * Timeクラスにdeltatimeパラメータがあり、前のフレームからの経過時間が取得できるためこちらを用いるとよい
          */
-		Float frame = Time.deltatime;
+		float frame = Time.deltaTime;
 
         /*
         //マウスの位置によって回転させる
@@ -45,11 +45,11 @@ public class BatBehaviourScript : MonoBehaviour{
         //スレッショルド補正するつもり
         
         //ローカルに力を加える
-        rb.AddRelativeForce(acc/frame/frame, ForceMode.Acceleration);
+        rb.AddRelativeForce(acc, ForceMode.Acceleration);
 
         //ジャイロによる回転
-//        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
-		Vector3 gyro = SBehav.Gyro
+        //        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
+        Vector3 gyro = SBehav.Gyro;
         //スレッショルド補正するつもり
 
         //gyroの値分回転させる
@@ -58,9 +58,10 @@ public class BatBehaviourScript : MonoBehaviour{
          * rigidbodyのオブジェクトにはtransformの操作が利きません
          * rigidbodyのプロパティに回転をかけるか、AddRelativeTorqueの利用を検討してください
          */
-		/* スナダ rigidbodyにインスタント速度変化を追加 */
-		rb.AddRelativeTorque (gyro, ForceMode.VelocityChange);
-        
+        /* スナダ rigidbodyにインスタント速度変化を追加 */
+        rb.AddRelativeTorque(gyro, ForceMode.VelocityChange);
+
+        Debug.Log(acc.ToString() + "," + gyro.ToString());
     }
 
 

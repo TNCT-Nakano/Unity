@@ -6,22 +6,10 @@ public class init : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        //下向きにrayを打つ
-        RaycastHit hit;
-        //(0,0,0)周辺から打つと正しい値が出ない
-        Vector3 pos = new Vector3(0, 0, 0);
-        Ray downRay = new Ray(pos, Vector3.down);
-        if (Physics.Raycast(downRay, out hit, 10))
-        {
-			/* 地面との距離でプレハブを移動
-            print("Ray Distance: " + hit.distance);
-            print("transform.position" + transform.position);
-            transform.position = new Vector3(0, -hit.distance, 0);
-            */
-
-			/* o地点から下に向けて当たった座標にプレハブ配置　*/
-			Instantiate (bases, hit.point, Quaternion.identitys);
-        }
+        Vector3 headPos = Camera.main.transform.position;
+        RaycastHit floor;
+        if (Physics.Raycast(headPos, -transform.up, out floor, 3f, HoloToolkit.Unity.SpatialMapping.SpatialMappingManager.Instance.LayerMask))
+            gameObject.transform.position = floor.point;
 	}
 	
 	// Update is called once per frame
