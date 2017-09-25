@@ -25,29 +25,31 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
+        
     }
 
 	
 	// Update is called once per frame
     //60fps
 	void Update () {
+
+        //だいたい0.2(1/60)が出る
 		frame = Time.deltaTime;
 
+        //加速度による移動
         acc = SBehav.Accel;
+        //acc = new Vector3(0, 9.81f, 0);
+        acc.y = -acc.y;
         transform.Translate(acc * frame * frame, Space.Self);
-
+        //重力加速度を引く
+        transform.Translate(Vector3.up * 9.7f * frame* frame, Space.World);
+        
+        //角速度による回転
         gyro = SBehav.Gyro;
-        transform.Rotate(gyro * frame, Space.Self);
+        //gyro = new Vector3(0, 0, 0);
+        transform.Rotate(gyro, Space.Self);
 
         Debug.Log(acc.ToString() + "," + gyro.ToString());
-    }
-
-
-
-    //50fps
-    private void FixedUpdate()
-    {
-        
     }
 
     //衝突時
