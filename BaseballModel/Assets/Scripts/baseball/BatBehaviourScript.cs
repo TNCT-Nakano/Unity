@@ -25,60 +25,31 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
+        
     }
 
 	
 	// Update is called once per frame
     //60fps
 	void Update () {
-        /*********
-         * げっぱ※
-         * Unityはフレームの更新速度が可変であるため、frameによる時間の算出は不適切かと
-         * Timeクラスにdeltatimeパラメータがあり、前のフレームからの経過時間が取得できるためこちらを用いるとよい
-         */
 
         //だいたい0.2(1/60)が出る
 		frame = Time.deltaTime;
 
         //加速度による移動
         acc = SBehav.Accel;
-
-        //スレッショルド補正するつもり
-
-        //ローカルに力を加える
-        //rb.AddRelativeForce(acc, ForceMode.Acceleration);
-
+        //acc = new Vector3(0, 9.81f, 0);
+        acc.y = -acc.y;
         transform.Translate(acc * frame * frame, Space.Self);
-
-        //ジャイロによる回転
-        //        Quaternion gyro = Quaternion.Euler(SBehav.Gyro);
+        //重力加速度を引く
+        transform.Translate(Vector3.up * 9.7f * frame* frame, Space.World);
+        
+        //角速度による回転
         gyro = SBehav.Gyro;
-        //スレッショルド補正するつもり
-
-        //gyroの値分回転させる
-        /*********
-         * げっぱ※
-         * rigidbodyのオブジェクトにはtransformの操作が利きません
-         * rigidbodyのプロパティに回転をかけるか、AddRelativeTorqueの利用を検討してください
-         */
-
-        //スレッショルド補正するつもり
-
-        //gyroの値分回転させる
-        // rigidbodyにインスタント速度変化を追加
-        //rb.AddRelativeTorque (gyro, ForceMode.VelocityChange);
-
-        transform.Rotate(gyro * frame, Space.Self);
+        //gyro = new Vector3(0, 0, 0);
+        transform.Rotate(gyro, Space.Self);
 
         Debug.Log(acc.ToString() + "," + gyro.ToString());
-    }
-
-
-
-    //50fps
-    private void FixedUpdate()
-    {
-        
     }
 
     //衝突時
