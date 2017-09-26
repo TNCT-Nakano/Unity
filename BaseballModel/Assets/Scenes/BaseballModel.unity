@@ -167,6 +167,10 @@ Prefab:
       propertyPath: m_Name
       value: Bat
       objectReference: {fileID: 0}
+    - target: {fileID: 4830647433590174, guid: 3087f2158c275b64f98942a3b635ee0d, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3087f2158c275b64f98942a3b635ee0d, type: 2}
   m_IsPrefabParent: 0
