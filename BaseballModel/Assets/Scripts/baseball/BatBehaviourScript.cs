@@ -18,6 +18,9 @@ public class BatBehaviourScript : MonoBehaviour{
     private Rigidbody rb;
 	private float frame;
 
+    public AudioClip hit;
+    public AudioClip swing;
+
     // Use this for initialization
     void Start () {
         //rigidbody.centerOfMass = new Vector3(0, 0, 1);
@@ -25,7 +28,7 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
-        
+
     }
 
 	
@@ -55,12 +58,20 @@ public class BatBehaviourScript : MonoBehaviour{
     //衝突時
     private void OnCollisionEnter(Collision collision)
     {
+        AudioSource audiosource = gameObject.GetComponent<AudioSource>();
+        //スイング音
+        audiosource.PlayOneShot(swing);
+
+
         //UnlimitedHandによる衝撃
         if (collision.gameObject.CompareTag("Ball"))
         {
             //チャンネル部位、時間sec max200、電圧max12、鋭さmax20
             Debug.Log("Hit!!!");
             UHBehav.stimulate(0, 1, 12, 20);
+
+            //打撃音
+            audiosource.PlayOneShot(hit);
         }
 
     }
