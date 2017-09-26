@@ -8,12 +8,16 @@ public class PitchingMachine : MonoBehaviour, IInputClickHandler {
     
     public GameObject baseball;
     public Transform target;
-    public float Vy, Vz, speed;
+    private float Vy, Vz;
+    public float speed;
 
     public bool active;
     public float interval;
     private float timeleft;
 
+    private bool standby=false;
+    public Material defaultMaterial;
+    public Material standbyMaterial;
 	// Use this for initialization
 	void Start () {
         
@@ -23,10 +27,17 @@ public class PitchingMachine : MonoBehaviour, IInputClickHandler {
 	void Update () {
         if (active) {
             timeleft -= Time.deltaTime;
+            if (!standby && timeleft <= 1.0f)
+            {
+                standby = true;
+                GetComponent<Renderer>().material = standbyMaterial;
+            }
             if (timeleft <= 0.0f)
             {
                 timeleft = interval;
                 ThroughBall();
+                standby = false;
+                GetComponent<Renderer>().material = defaultMaterial;
             }
         }
 	}

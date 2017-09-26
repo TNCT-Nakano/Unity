@@ -12,6 +12,8 @@ public class BatBehaviourScript : MonoBehaviour{
     private Vector3 accThres = new Vector3(1,1,1);
     private Vector3 gyroThres = new Vector3(1, 1, 1);
 
+    private Vector3 gravity = new Vector3(0,9.8f,0);
+
     private Vector3 acc;
     private Vector3 gyro;
 
@@ -25,7 +27,8 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
-        
+
+        gravity.y = SBehav.Accel.magnitude;
     }
 
 	
@@ -36,20 +39,19 @@ public class BatBehaviourScript : MonoBehaviour{
         //だいたい0.2(1/60)が出る
 		frame = Time.deltaTime;
 
-        //加速度による移動
-        acc = SBehav.Accel;
-        //acc = new Vector3(0, 9.81f, 0);
-        acc.y = -acc.y;
-        transform.Translate(acc * frame * frame, Space.Self);
-        //重力加速度を引く
-        transform.Translate(Vector3.up * 9.7f * frame* frame, Space.World);
-        
         //角速度による回転
         gyro = SBehav.Gyro;
-        //gyro = new Vector3(0, 0, 0);
+        gyro.x = -gyro.x;
+        gyro.y = -gyro.y;
         transform.Rotate(gyro, Space.Self);
 
-        Debug.Log(acc.ToString() + "," + gyro.ToString());
+        //加速度による移動
+        acc = SBehav.Accel;
+        var move = Quaternion.Inverse(transform.rotation) * acc - gravity;
+        move.y = -move.y;
+        transform.Translate(Quaternion.Inverse(transform.rotation)* acc* frame * frame, Space.World);
+
+        Debug.Log(acc+","+move);
     }
 
     //衝突時
