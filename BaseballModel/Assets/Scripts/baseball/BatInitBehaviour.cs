@@ -5,6 +5,7 @@ using UnityEngine;
 public class BatInitBehaviour : MonoBehaviour {
     private GameObject initBat = null;
     public GameObject batPrefab;
+    public GameObject batPrefab_Init;
     public void CreateInitializer()
     {
         if (!initBat) //初期化中じゃなければ初期化用ホログラムが存在しない
@@ -16,9 +17,8 @@ public class BatInitBehaviour : MonoBehaviour {
 
             //初期化用ホログラム生成
             //TODO プリミティブなオブジェクトではなく、Prefabによる初期化用のバットにするべき
-            initBat = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            initBat = Instantiate(batPrefab_Init);
             initBat.transform.position = Camera.main.transform.position + Camera.main.transform.forward.normalized * 0.5f;
-            initBat.transform.localScale = new Vector3(0.067f, 0.83f, 0.067f); 
         }
     }
 
