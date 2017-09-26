@@ -18,6 +18,10 @@ public class BatBehaviourScript : MonoBehaviour{
     private Rigidbody rb;
 	private float frame;
 
+    public AudioClip hit, swing;
+
+    public Transform player;
+
     // Use this for initialization
     void Start () {
         //rigidbody.centerOfMass = new Vector3(0, 0, 1);
@@ -25,6 +29,7 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
+        
     }
 
 	
@@ -37,29 +42,36 @@ public class BatBehaviourScript : MonoBehaviour{
 
         //角速度による回転
         gyro = SBehav.Gyro;
-        gyro.x = -gyro.x;
-        gyro.y = -gyro.y;
-        transform.Rotate(gyro, Space.Self);
+        //x = -x, y = -z, z = -y
+        //transform.Rotate(gyro, Space.Self);
+        player.Rotate(-gyro.x, -gyro.z, -gyro.y, Space.Self);
 
         //加速度による移動
         acc = SBehav.Accel;
         acc.y = -acc.y;
         acc.z = -acc.z;
-        
-        transform.Translate(Quaternion.Inverse(transform.rotation) * acc* frame * frame, Space.World);
 
-        Debug.Log(acc+","+ Quaternion.Inverse(transform.rotation) * acc);
+        //transform.Translate(Quaternion.Inverse(transform.rotation) * acc* frame * frame, Space.World);
+        Debug.Log(gyro);
+        //Debug.Log(acc+","+ Quaternion.Inverse(transform.rotation) * acc);
     }
 
     //衝突時
     private void OnCollisionEnter(Collision collision)
     {
+        AudioSource audiosource = gameObject.GetComponent<AudioSource>();
+        //スイング音
+        audiosource.PlayOneShot(swing);
+
         //UnlimitedHandによる衝撃
         if (collision.gameObject.CompareTag("Ball"))
         {
             //チャンネル部位、時間sec max200、電圧max12、鋭さmax20
             Debug.Log("Hit!!!");
             UHBehav.stimulate(0, 1, 12, 20);
+
+            //打撃音
+            audiosource.PlayOneShot(hit);
         }
 
     }
