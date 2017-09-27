@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 54213675280929960}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 82523270336317534}
   m_Layer: 0
   m_Name: Bat
-  m_TagString: Bat
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76,7 +76,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1321259437985782}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.97, y: -0.4, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
@@ -241,7 +241,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!54 &54742185362926668
 Rigidbody:
@@ -337,7 +337,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -361,9 +361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50fcfc17d1a292448d00876305bc9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  forInit: 0
   hit: {fileID: 8300000, guid: 1a1ffe2a8737d74438b3c42dd1e9dbc2, type: 3}
   swing: {fileID: 8300000, guid: 08a7201cd0a00ba46a4477649b3f1fb0, type: 3}
-  player: {fileID: 4642551315650234}
 --- !u!114 &114210451262928108
 MonoBehaviour:
   m_ObjectHideFlags: 1

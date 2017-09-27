@@ -5,7 +5,6 @@ using UnityEngine;
 public class BatInitBehaviour : MonoBehaviour {
     private GameObject initBat = null;
     public GameObject batPrefab;
-    public GameObject batPrefab_Init;
     public void CreateInitializer()
     {
         if (!initBat) //初期化中じゃなければ初期化用ホログラムが存在しない
@@ -17,8 +16,8 @@ public class BatInitBehaviour : MonoBehaviour {
 
             //初期化用ホログラム生成
             //TODO プリミティブなオブジェクトではなく、Prefabによる初期化用のバットにするべき
-            initBat = Instantiate(batPrefab_Init);
-            initBat.transform.position = Camera.main.transform.position + Camera.main.transform.forward.normalized * 0.5f;
+            initBat = Instantiate(batPrefab);
+            initBat.GetComponentInChildren<BatBehaviourScript>().forInit = true;
         }
     }
 

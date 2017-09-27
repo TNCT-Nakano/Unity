@@ -22,7 +22,7 @@ public class BatBehaviourScript : MonoBehaviour{
 
     public AudioClip hit, swing;
 
-    public Transform player;
+    private GameObject player;
 
     // Use this for initialization
     void Start () {
@@ -31,7 +31,7 @@ public class BatBehaviourScript : MonoBehaviour{
         UHBehav = bt.GetComponent<UnlimitedHandBehaviour>();
         SBehav = bt.GetComponent<SensorBehaviour>();
         rb = GetComponent<Rigidbody>();
-        
+        player = transform.root.gameObject;
     }
 
 	
@@ -47,7 +47,7 @@ public class BatBehaviourScript : MonoBehaviour{
             gyro = SBehav.Gyro;
             //x = -x, y = -z, z = -y
             //transform.Rotate(gyro, Space.Self);
-            player.Rotate(-gyro.x, -gyro.z, -gyro.y, Space.Self);
+            player.transform.Rotate(-gyro.x, -gyro.z, -gyro.y, Space.Self);
 
             //加速度による移動
             acc = SBehav.Accel;
@@ -55,10 +55,10 @@ public class BatBehaviourScript : MonoBehaviour{
             acc.z = -acc.z;
 
             //transform.Translate(Quaternion.Inverse(transform.rotation) * acc* frame * frame, Space.World);
-            Debug.Log(gyro);
+            //Debug.Log(gyro);
             //Debug.Log(acc+","+ Quaternion.Inverse(transform.rotation) * acc);
         }
-        player.transform.position = Camera.main.transform.position - transform.up * 0.5f;
+        player.GetComponent<Rigidbody>().position = Camera.main.transform.position - new Vector3(0,0.6f,0);
     }
 
     //衝突時
