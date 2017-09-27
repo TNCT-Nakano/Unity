@@ -11,6 +11,7 @@ public class init : MonoBehaviour {
         if (Physics.Raycast(headPos, -transform.up, out floor, 3f, HoloToolkit.Unity.SpatialMapping.SpatialMappingManager.Instance.LayerMask))
             gameObject.transform.position = floor.point;
 
+        GetComponent<HoloToolkit.Unity.SpatialMapping.SurfaceMeshesToPlanes>().MakePlanes();
         GameObject.Find("SpatialMapping").GetComponent<HoloToolkit.Unity.SpatialMapping.SpatialMappingObserver>().CleanupObserver();
 	}
 	
