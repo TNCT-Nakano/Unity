@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\bin\x86\Release\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2017-09-26T09:54:10.426</Modified>
+      <Modified>2017-09-27T02:20:10.109</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\bin\x86\Release\BaseballModel.exe">
       <PackagePath>entrypoint\BaseballModel.exe</PackagePath>
-      <Modified>2017-09-26T09:54:02.732</Modified>
+      <Modified>2017-09-27T02:20:01.771</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
       <PackagePath>Microsoft.ApplicationInsights.dll</PackagePath>
@@ -555,27 +555,27 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\globalgamemanagers">
       <PackagePath>Data\globalgamemanagers</PackagePath>
-      <Modified>2017-09-26T09:53:16.937</Modified>
+      <Modified>2017-09-27T02:18:23.238</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level0">
       <PackagePath>Data\level0</PackagePath>
-      <Modified>2017-09-26T09:53:15.129</Modified>
+      <Modified>2017-09-27T02:18:21.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level1">
       <PackagePath>Data\level1</PackagePath>
-      <Modified>2017-09-26T09:53:15.477</Modified>
+      <Modified>2017-09-27T02:18:21.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level2">
       <PackagePath>Data\level2</PackagePath>
-      <Modified>2017-09-26T09:53:15.669</Modified>
+      <Modified>2017-09-27T02:18:21.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level3">
       <PackagePath>Data\level3</PackagePath>
-      <Modified>2017-09-26T09:53:16.072</Modified>
+      <Modified>2017-09-27T02:18:22.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level4">
       <PackagePath>Data\level4</PackagePath>
-      <Modified>2017-09-26T09:53:16.399</Modified>
+      <Modified>2017-09-27T02:18:22.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\Resources\unity default resources">
       <PackagePath>Data\Resources\unity default resources</PackagePath>
@@ -583,71 +583,71 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\Resources\unity_builtin_extra">
       <PackagePath>Data\Resources\unity_builtin_extra</PackagePath>
-      <Modified>2017-09-26T09:53:21.959</Modified>
+      <Modified>2017-09-27T02:18:28.813</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\globalgamemanagers.assets">
       <PackagePath>Data\globalgamemanagers.assets</PackagePath>
-      <Modified>2017-09-26T09:53:17.158</Modified>
+      <Modified>2017-09-27T02:18:23.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets0.assets">
       <PackagePath>Data\sharedassets0.assets</PackagePath>
-      <Modified>2017-09-26T09:53:17.471</Modified>
+      <Modified>2017-09-27T02:18:23.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets1.assets">
       <PackagePath>Data\sharedassets1.assets</PackagePath>
-      <Modified>2017-09-26T09:53:17.578</Modified>
+      <Modified>2017-09-27T02:18:23.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets2.assets">
       <PackagePath>Data\sharedassets2.assets</PackagePath>
-      <Modified>2017-09-26T09:53:21.294</Modified>
+      <Modified>2017-09-27T02:18:28.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets3.assets">
       <PackagePath>Data\sharedassets3.assets</PackagePath>
-      <Modified>2017-09-26T09:53:21.303</Modified>
+      <Modified>2017-09-27T02:18:28.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets4.assets">
       <PackagePath>Data\sharedassets4.assets</PackagePath>
-      <Modified>2017-09-26T09:53:21.458</Modified>
+      <Modified>2017-09-27T02:18:28.188</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level0.resS">
       <PackagePath>Data\level0.resS</PackagePath>
-      <Modified>2017-09-26T09:53:15.127</Modified>
+      <Modified>2017-09-27T02:18:21.085</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level1.resS">
       <PackagePath>Data\level1.resS</PackagePath>
-      <Modified>2017-09-26T09:53:15.476</Modified>
+      <Modified>2017-09-27T02:18:21.455</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level3.resS">
       <PackagePath>Data\level3.resS</PackagePath>
-      <Modified>2017-09-26T09:53:16.071</Modified>
+      <Modified>2017-09-27T02:18:22.001</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\level4.resS">
       <PackagePath>Data\level4.resS</PackagePath>
-      <Modified>2017-09-26T09:53:16.398</Modified>
+      <Modified>2017-09-27T02:18:22.327</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets0.assets.resS">
       <PackagePath>Data\sharedassets0.assets.resS</PackagePath>
-      <Modified>2017-09-26T09:53:17.470</Modified>
+      <Modified>2017-09-27T02:18:23.742</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets1.assets.resS">
       <PackagePath>Data\sharedassets1.assets.resS</PackagePath>
-      <Modified>2017-09-26T09:53:17.577</Modified>
+      <Modified>2017-09-27T02:18:23.852</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets3.assets.resS">
       <PackagePath>Data\sharedassets3.assets.resS</PackagePath>
-      <Modified>2017-09-26T09:53:21.302</Modified>
+      <Modified>2017-09-27T02:18:28.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\managedAssemblies.txt">
       <PackagePath>Data\managedAssemblies.txt</PackagePath>
-      <Modified>2017-09-26T09:53:39.240</Modified>
+      <Modified>2017-09-27T02:18:50.010</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\nativePlugins.txt">
       <PackagePath>Data\nativePlugins.txt</PackagePath>
-      <Modified>2017-09-26T09:53:39.242</Modified>
+      <Modified>2017-09-27T02:18:50.011</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Data\sharedassets2.resource">
       <PackagePath>Data\sharedassets2.resource</PackagePath>
-      <Modified>2017-09-26T09:53:21.296</Modified>
+      <Modified>2017-09-27T02:18:28.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -660,39 +660,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\Assembly-CSharp.dll">
       <PackagePath>Assembly-CSharp.dll</PackagePath>
-      <Modified>2017-09-26T09:54:08.900</Modified>
+      <Modified>2017-09-27T02:20:08.344</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.dll">
       <PackagePath>UnityEngine.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.424</Modified>
+      <Modified>2017-09-27T02:20:08.918</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.Analytics.dll">
       <PackagePath>UnityEngine.Analytics.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.644</Modified>
+      <Modified>2017-09-27T02:20:09.130</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\nunit.framework.dll">
       <PackagePath>nunit.framework.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.696</Modified>
+      <Modified>2017-09-27T02:20:09.185</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.UI.dll">
       <PackagePath>UnityEngine.UI.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.805</Modified>
+      <Modified>2017-09-27T02:20:09.296</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.HoloLens.dll">
       <PackagePath>UnityEngine.HoloLens.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.855</Modified>
+      <Modified>2017-09-27T02:20:09.353</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.Networking.dll">
       <PackagePath>UnityEngine.Networking.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.910</Modified>
+      <Modified>2017-09-27T02:20:09.415</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\UnityEngine.VR.dll">
       <PackagePath>UnityEngine.VR.dll</PackagePath>
-      <Modified>2017-09-26T09:54:09.960</Modified>
+      <Modified>2017-09-27T02:20:09.456</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\inagaki\Documents\workspace\github\BaseballModel\App\BaseballModel\bin\x86\Release\Core\BaseballModel.exe">
       <PackagePath>BaseballModel.exe</PackagePath>
-      <Modified>2017-09-26T09:54:10.417</Modified>
+      <Modified>2017-09-27T02:20:10.095</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

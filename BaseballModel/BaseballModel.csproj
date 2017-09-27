@@ -323,7 +323,6 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
-    <Compile Include="Assets\PivotBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\HandObserver.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
     <Compile Include="Assets\Scripts\SUTagViewer.cs" />
