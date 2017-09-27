@@ -10,6 +10,8 @@ public class init : MonoBehaviour {
         RaycastHit floor;
         if (Physics.Raycast(headPos, -transform.up, out floor, 3f, HoloToolkit.Unity.SpatialMapping.SpatialMappingManager.Instance.LayerMask))
             gameObject.transform.position = floor.point;
+
+        GameObject.Find("SpatialMapping").GetComponent<HoloToolkit.Unity.SpatialMapping.SpatialMappingObserver>().CleanupObserver();
 	}
 	
 	// Update is called once per frame
