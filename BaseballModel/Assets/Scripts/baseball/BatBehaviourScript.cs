@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BatBehaviourScript : MonoBehaviour{
 
+    public bool forInit = false;
+
     private float x, y, z;
     private UnlimitedHandBehaviour UHBehav;
     private SensorBehaviour SBehav;
@@ -36,24 +38,27 @@ public class BatBehaviourScript : MonoBehaviour{
 	// Update is called once per frame
     //60fps
 	void Update () {
+        if (!forInit)
+        {
+            //だいたい0.2(1/60)が出る
+            frame = Time.deltaTime;
 
-        //だいたい0.2(1/60)が出る
-		frame = Time.deltaTime;
+            //角速度による回転
+            gyro = SBehav.Gyro;
+            //x = -x, y = -z, z = -y
+            //transform.Rotate(gyro, Space.Self);
+            player.Rotate(-gyro.x, -gyro.z, -gyro.y, Space.Self);
 
-        //角速度による回転
-        gyro = SBehav.Gyro;
-        //x = -x, y = -z, z = -y
-        //transform.Rotate(gyro, Space.Self);
-        player.Rotate(-gyro.x, -gyro.z, -gyro.y, Space.Self);
+            //加速度による移動
+            acc = SBehav.Accel;
+            acc.y = -acc.y;
+            acc.z = -acc.z;
 
-        //加速度による移動
-        acc = SBehav.Accel;
-        acc.y = -acc.y;
-        acc.z = -acc.z;
-
-        //transform.Translate(Quaternion.Inverse(transform.rotation) * acc* frame * frame, Space.World);
-        Debug.Log(gyro);
-        //Debug.Log(acc+","+ Quaternion.Inverse(transform.rotation) * acc);
+            //transform.Translate(Quaternion.Inverse(transform.rotation) * acc* frame * frame, Space.World);
+            Debug.Log(gyro);
+            //Debug.Log(acc+","+ Quaternion.Inverse(transform.rotation) * acc);
+        }
+        player.transform.position = Camera.main.transform.position - transform.up * 0.5f;
     }
 
     //衝突時
