@@ -63,15 +63,17 @@ public class BatBehaviourScript : MonoBehaviour{
         //スイング音
         audiosource.PlayOneShot(swing);
 
+        //チャンネル部位、時間sec max200、電圧max12、鋭さmax20
+        Debug.Log("Hit!!!");
+        UHBehav.stimulate(0, 1, 12, 20);
+
+        //打撃音
+        audiosource.PlayOneShot(hit);
+
         //UnlimitedHandによる衝撃
         if (collision.gameObject.CompareTag("Ball"))
         {
-            //チャンネル部位、時間sec max200、電圧max12、鋭さmax20
-            Debug.Log("Hit!!!");
-            UHBehav.stimulate(0, 1, 12, 20);
-
-            //打撃音
-            audiosource.PlayOneShot(hit);
+            
         }
 
     }

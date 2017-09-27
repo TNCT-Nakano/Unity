@@ -323,7 +323,6 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\VectorRollingStatistics.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\WorldAnchorManager.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Shaders\FastConfigurable\Scripts\CalibrationSpace.cs" />
-    <Compile Include="Assets\PivotBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\HandObserver.cs" />
     <Compile Include="Assets\Scripts\SUSwitch.cs" />
     <Compile Include="Assets\Scripts\SUTagViewer.cs" />
@@ -332,6 +331,7 @@
     <Compile Include="Assets\Scripts\baseball\BatInitBehaviour.cs" />
     <Compile Include="Assets\Scripts\baseball\BehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\PitchingMachine.cs" />
+    <Compile Include="Assets\Scripts\baseball\PivotBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\StrikeZoneBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\baseball\ballScript.cs" />
     <Compile Include="Assets\Scripts\baseball\init.cs" />
